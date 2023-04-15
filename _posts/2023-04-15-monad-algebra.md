@@ -1,3 +1,6 @@
+---
+published: false
+---
 # Monads are all about algebra
 
 ## Introduction, and a bit of context
