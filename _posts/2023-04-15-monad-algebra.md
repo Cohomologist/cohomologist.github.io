@@ -220,7 +220,17 @@ winner (NimState turn 0) = Just turn
 winner _ = Nothing
 ```
 
-But now we need to consider the 
+Now we want to plan our future moves, and to do, we need to generate them. We start by generating all valid moves in a given state:
+
+```haskell
+validMoves :: NimState -> [Move]
+validMoves (NimState _ 0) = []
+validMoves (NimState _ 1) = [One]
+validMoves (NimState _ 2) = [One, Two]
+validMoves (NimState _ 3) = [One, Two, Three]
+```
+
+But
 
 ## Bonus: `State`
 The `State` monad has, as expressions, functions `s -> (s, a)` for a state type `s` and an output type `a`. They represent functions that take in a state of type `s`, and return an updated state as well as an output of type `a`. The `State` monad explicitly models a procedural program.
