@@ -1,7 +1,7 @@
 ---
 published: true
+title: Monads are all about algebra
 ---
-# Monads are all about algebra
 
 ## Introduction, and a bit of context
 
