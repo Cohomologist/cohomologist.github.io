@@ -3,8 +3,6 @@ published: true
 title: Monads are all about algebra
 ---
 
-## Introduction, and a bit of context
-
 Ultimately, programs are all about turning data into action. But different languages approach this problem in different ways. Languages which favor a procedural style emphasize the action more than the data, so much so that they represent transformations of data in terms of an action! For example, `for` loops mutate an iteration value that never gets used again outside the loop, even though we often use `for` loops to transform data.
 
 On the other hand, languages which favor a declarative style - like Haskell - emphasize the data over the action. We are way more concerned in forming the correct **representation** of our data, so that when we perform actions based on our data, we can express those actions easily.
