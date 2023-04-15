@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 # Monads are all about algebra
 
