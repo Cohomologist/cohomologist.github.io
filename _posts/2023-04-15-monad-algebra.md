@@ -201,6 +201,7 @@ The game itself is trivial to program:
 data Player = First | Second
 data Move = One | Two | Three
 data NimState = NimState Player Int
+data Result = Winner Player | Undecided
 
 initNimState :: NimState
 initNimState = NimState First 20
@@ -215,22 +216,36 @@ move (NimState turn stones) move = let
   in
     NimState (nextTurn turn) (stones - count move)
     
-winner :: NimState -> Maybe Player
-winner (NimState turn 0) = Just turn
-winner _ = Nothing
+winner :: NimState -> Result
+winner (NimState turn 0) = Winner turn
+winner _ = Undecided
 ```
 
-Now we want to plan our future moves, and to do, we need to generate them. We start by generating all valid moves in a given state:
+But let's do something a little different here. Algebraists prefer to use as few structures as they can, only introducing additional complexity when necessary, and building more complex structures by combining simpler ones whose properties we already know. After all, algebra is all about simplifying, and we want to see how we can represent things with a minimum of baggage.
+
+Right here, we have a `NimState` and a `Move` type. But a state is the result of a sequence of moves. From that sequence, we can easily find whose turn it is and the number of stones remaining. So we can let `NimState` be a list of moves instead.
 
 ```haskell
-validMoves :: NimState -> [Move]
-validMoves (NimState _ 0) = []
-validMoves (NimState _ 1) = [One]
-validMoves (NimState _ 2) = [One, Two]
-validMoves (NimState _ 3) = [One, Two, Three]
-```
+data Player = First | Second
+data Move = One | Two | Three
+data Result = Winner Player | Undecided
+type NimState = [Move]
 
-But
+count :: Move -> Int
+count One = 1
+count Two = 2
+count Three = 3
+
+turn :: NimState -> Player
+turn [] = First
+turn (_:xs) = let
+  opposite First = Second
+  opposite Second = First
+  in opposite $ turn xs
+    
+stonesRemaining :: NimState -> Move
+stonesRemaining = flip subtract 20 . sum . map count
+```
 
 ## Bonus: `State`
 The `State` monad has, as expressions, functions `s -> (s, a)` for a state type `s` and an output type `a`. They represent functions that take in a state of type `s`, and return an updated state as well as an output of type `a`. The `State` monad explicitly models a procedural program.
