@@ -206,15 +206,18 @@ data Result = Winner Player | Undecided
 initNimState :: NimState
 initNimState = NimState First 20
 
+count :: Move -> Int
+count One = 1
+count Two = 2
+count Three = 3
+
+opposite :: Move -> Move
+opposite First = Second
+opposite Second = First
+
 move :: NimState -> Move -> NimState
-move (NimState turn stones) move = let
-  nextTurn First = Second
-  nextTurn Second = First
-  count One = 1
-  count Two = 2
-  count Three = 3
-  in
-    NimState (nextTurn turn) (stones - count move)
+move (NimState turn stones) move = 
+  NimState (opposite turn) (stones - count move)
     
 winner :: NimState -> Result
 winner (NimState turn 0) = Winner turn
@@ -236,15 +239,23 @@ count One = 1
 count Two = 2
 count Three = 3
 
+opposite :: Move -> Move
+opposite First = Second
+opposite Second = First
+
 turn :: NimState -> Player
 turn [] = First
-turn (_:xs) = let
-  opposite First = Second
-  opposite Second = First
-  in opposite $ turn xs
+turn (_:xs) = opposite $ turn xs
     
 stonesRemaining :: NimState -> Move
 stonesRemaining = flip subtract 20 . sum . map count
+
+winner :: NimState -> Result
+winner ns = 
+  if stonesRemaining ns == 0 then 
+    Winner $ turn ns 
+  else 
+    Undecided
 ```
 
 ## Bonus: `State`
