@@ -181,82 +181,21 @@ nthRoot n k
 ### Takeaways
 In the `Maybe` algebra, we have provided
 - a way of constructing a `Maybe` expression using the data constructors `Just` and `Nothing`,
-- an operation `Just` on existing `Maybe` expression, allowing us to chain multiple judgements that the value being referred to exists, and
+- an operation `Just` on existing `Maybe` expressions, allowing us to chain multiple judgements that the value being referred to exists, and
 - a way of collapsing these judgements into a single judgement using `simplifyMaybe`: the value simply exists and has this value, or it doesn't exist - not "this value exists $n$ times".
 
 The `Maybe` constructor satisfies something similar to the associative law, which means there is only one way to simplify long chains of `Just`s despite `simplifyMaybe` being a binary operation.
 
 More generally, in Haskell, an algebra gives us a way of constructing expressions over a base type `a` (`Just :: a -> Maybe a, Nothing :: Maybe a`), and a way of simplifying those expressions in a meaningful way (`simplifyMaybe`). A functor lifts pure functions `a -> b` into functions between expressions of our algebra (`Maybe a -> Maybe b`).
 
-## `List`: Decisions, decisions, decisions
-Haskell and declarative programming in general owes a lot to Lisp. In turn, Lisp, which stands for the mundane "list processing", was developed to fuel one of the earliest crazes in all of computer science: artificial intelligence. No, back then, they didn't have deep learning and powerful computers, so they couldn't just fit a big neural network-sized curve to every problem. For computers to even have a chance of seeming "intelligent", they had to be able to represent things in the world in a way they could compute with.
-
-I don't want to get too metaphysical, but one of the most important things in the world is *choice*. To make a decision, a computer has to generate the choices it can make in a given state, and then select the best one. Now if you are an AI aficionado, you might be thinking that a computer could *also* just map states to choices, but remember, storage was worth its weight in gold back then. You couldn't just plug in a 1TB hard drive and store the best choice in every possible state.
-
-Let's consider a simple variant of the game **Nim** played with two players. There is a pile of 20 stones, and each player can take 1, 2, or 3 stones away from the pile each turn. The player who takes the last stone loses, and I think the player who didn't have to do that wins. Simple! And with a game as simple as that, we already know the perfect strategy for it, but let's say we can't use that because I said so.
-
-The game itself is trivial to program:
+## `Exterior`: size matters
+Let's do something a bit more fun and unfamiliar than `Maybe`. The `length` function takes a list and returns the number of elements:
 
 ```haskell
-data Player = First | Second
-data Move = One | Two | Three
-data NimState = NimState Player Int
-data Result = Winner Player | Undecided
-
-initNimState :: NimState
-initNimState = NimState First 20
-
-count :: Move -> Int
-count One = 1
-count Two = 2
-count Three = 3
-
-opposite :: Move -> Move
-opposite First = Second
-opposite Second = First
-
-move :: NimState -> Move -> NimState
-move (NimState turn stones) move = 
-  NimState (opposite turn) (stones - count move)
-    
-winner :: NimState -> Result
-winner (NimState turn 0) = Winner turn
-winner _ = Undecided
+length [1, 2, 3] == 3
 ```
 
-But let's do something a little different here. Algebraists prefer to use as few structures as they can, only introducing additional complexity when necessary, and building more complex structures by combining simpler ones whose properties we already know. After all, algebra is all about simplifying, and we want to see how we can represent things with a minimum of baggage.
-
-Right here, we have a `NimState` and a `Move` type. But a state is the result of a sequence of moves. From that sequence, we can easily find whose turn it is and the number of stones remaining. So we can let `NimState` be a list of moves instead.
-
-```haskell
-data Player = First | Second
-data Move = One | Two | Three
-data Result = Winner Player | Undecided
-type NimState = [Move]
-
-count :: Move -> Int
-count One = 1
-count Two = 2
-count Three = 3
-
-opposite :: Move -> Move
-opposite First = Second
-opposite Second = First
-
-turn :: NimState -> Player
-turn [] = First
-turn (_:xs) = opposite $ turn xs
-    
-stonesRemaining :: NimState -> Move
-stonesRemaining = flip subtract 20 . sum . map count
-
-winner :: NimState -> Result
-winner ns = 
-  if stonesRemaining ns == 0 then 
-    Winner $ turn ns 
-  else 
-    Undecided
-```
+but how do we generalize this to nested lists and even structures other than lists? Well, first, we would need a way of reasoning with lengths, and their higher-dimensional counterparts like areas and volumes.
 
 ## Bonus: `State`
 The `State` monad has, as expressions, functions `s -> (s, a)` for a state type `s` and an output type `a`. They represent functions that take in a state of type `s`, and return an updated state as well as an output of type `a`. The `State` monad explicitly models a procedural program.
