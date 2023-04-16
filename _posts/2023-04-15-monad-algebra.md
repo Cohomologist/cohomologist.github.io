@@ -11,7 +11,7 @@ The difference between a procedural and a declarative approach extends past prog
 
 > Alice was 2 times as old as Bob 4 years ago. Alice is now 30 years old. How old is Bob now?
 
-One way to solve it is by trial and error: we consider many possible solutions for Bob's age until we find the solution. Here, we are taking this problem at face value, and go straight to the computations. But on the other hand, we can *represent* the problem in a way that allows us to easily solve it. We can just do simple algebra:
+One way to solve it is by trial and error: we consider many possible solutions for Bob's age until we find the solution. Here, we are taking this problem at face value, and go straight to the computations. But on the other hand, we can *represent* the problem in a way that allows us to easily solve it. We can just do simple algebra - let $a$ represent Alice's current age and $b$ represents Bob's current age:
 
 $$
 \begin{align}
@@ -179,7 +179,7 @@ nthRoot n k
 ```
 
 ### Takeaways
-In the `Maybe` algebra, we have provided
+In the `Maybe` algebra, we have
 - a way of constructing a `Maybe` expression using the data constructors `Just` and `Nothing`,
 - an operation `Just` on existing `Maybe` expressions, allowing us to chain multiple judgements that the value being referred to exists, and
 - a way of collapsing these judgements into a single judgement using `simplifyMaybe`: the value simply exists and has this value, or it doesn't exist - not "this value exists $n$ times".
@@ -188,14 +188,40 @@ The `Maybe` constructor satisfies something similar to the associative law, whic
 
 More generally, in Haskell, an algebra gives us a way of constructing expressions over a base type `a` (`Just :: a -> Maybe a, Nothing :: Maybe a`), and a way of simplifying those expressions in a meaningful way (`simplifyMaybe`). A functor lifts pure functions `a -> b` into functions between expressions of our algebra (`Maybe a -> Maybe b`).
 
-## `Exterior`: size matters
-Let's do something a bit more fun and unfamiliar than `Maybe`. The `length` function takes a list and returns the number of elements:
+## `Reader`: move first, think later
+Often, our computations involve unknown values. For example, at the start, we mentioned the general solution for problems taking the form
+
+> Alice was $m$ times as old as Bob $y$ years ago. Alice is now $a$ years old. How old is Bob ($b$) now?
+
+was $b = (a - y + my)/m$. We will focus on the special case where a value is unknown because it *depends* on some other value. And of course, the right way to represent those values is through a function `r -> a`. In the age example, if we represent the ages $(m, y, a)$ and $b$ as `Float`s, we have a function
 
 ```haskell
-length [1, 2, 3] == 3
+b :: (Float, Float, Float) -> Float
+b (m, y, a) = (a - y + m * y) / m
 ```
 
-but how do we generalize this to nested lists and even structures other than lists? Well, first, we would need a way of reasoning with lengths, and their higher-dimensional counterparts like areas and volumes.
+We can represent these unknown values as a type
+
+```haskell
+newtype Reader r a = Reader {getReader :: r -> a}
+```
+
+and we want to develop an algebraic theory allowing us to more easily work with `Reader` expressions.
+
+### Interlude: Functions are (sometimes) values
+I used the term "value" loosely, even referring to functions `r -> a` as values. This is deliberate, as sometimes, functions should be treated as mere values! For example, a function $f: \{\bullet\} \to A$ from a one-element set is just a value of $A$. We can apply a function $g: A \to B$ to that value by just composing the functions: $gf: \{\bullet\} \to B$ points to a value of $B$. 
+
+In this case, `r` might not be the `()` type (the closest analog to the one-element set in Haskell), so how are functions `f :: r -> a` still "values"? Well, for any function `g :: a -> b`, there is an obvious way to lift it to a function `(r -> a) -> (r -> b)`:
+
+```haskell
+lifted :: (r -> a) -> (r -> b)
+lifted f = g . f
+```
+
+Once we know what the eventual value `v :: r` is, we can pass `v` to yield a value `f v :: a`, and apply `g` to it easily to get a value `g $ f v :: b`. So the one useful thing we can do with values of type `a` - applying functions to it - we can also do with values of type `r -> a` in an obvious way. The only difference between a value of type `r -> a` and a value of type `a` is that the first depends on some unknown value of type `r`. And as long as we know that there is only one eventual possibility for the unknown value, we can reason with a value of type `r -> a` just like we can with a value of type `a`. Long live handwaving!
+
+### Continuing...
+Let's go through the checklist again: to define an algebra, we have to define a way of constructing expressions, a way of operating on those expressions, and a way of simplifying these expressions in a meaningful way. We first fix a choice of type `r`, as it only makes sense when we work with a single choice of `r`. The first part is done: to construct a `Reader` expression, we have to provide a function `r -> a`. 
 
 ## Bonus: `State`
 The `State` monad has, as expressions, functions `s -> (s, a)` for a state type `s` and an output type `a`. They represent functions that take in a state of type `s`, and return an updated state as well as an output of type `a`. The `State` monad explicitly models a procedural program.
