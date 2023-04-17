@@ -48,7 +48,7 @@ $$
 
 For all nonprimitive types in $U$, we want to impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$. From now on, whenever we use this algebra, if we don't mention a specific choice of $U$, assume that we let $U$ be the primitive types along with any nonprimitive types we use which we will provide suitable relations for.
 
-## Operations on our algebra
+## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
 
 > Abbott et al. (2005). [∂ for data: differentiating data structures](http://strictlypositive.org/dfordata.pdf). Fudamenta Informaticae.
@@ -56,10 +56,10 @@ Of course, we have addition and multiplication, but we also take derivatives of 
 but we will use different language to describe it. A *derivation* is an operator $D: A \to A$ that satisfies the Leibniz rule:
 
 $$
-D(ab) = D(a)b + aD(b)
+D(pq) = D(p)q + pD(q)
 $$
 
-and we can define the derivative in this case to be the derivation $D(a) = 1$. We can uniquely extend this to the whole algebra using the Leibniz rule and the linearity of $D$. The derivative $D$ acts just like you would expect: $D(a^n) = na^{n-1}$ for any basis type $a \in U$. 
+and we can define the derivative in this case to be the derivation $D(a) = 1$ for all $a \in U$. We can uniquely extend this to the whole algebra using the Leibniz rule and the linearity of $D$. The derivative $D$ acts just like you would expect: $D(a^n) = na^{n-1}$ for $a \in U$. 
 
 Okay, cool, but what does the derivative actually mean? Well, consider the `Either a b` type for types `a, b` in $U$:
 
@@ -74,3 +74,21 @@ D(p_{ab}) = D(ab) = D(a)b + aD(b) = a + b
 $$
 
 Essentially, the derivative punctures a *hole* into a data structure. When we omit a single part of a `Pair`, either the `a` or the `b`, we either have a `Pair a _` or a `Pair _ b` remaining. When we construct a product type $a_1 \dots a_n$, we have to give a value for each type $a_i$. But when we omit an arbitrary term $a_i$ so we only have to give $a_1 \dots a_{i-1} a_{i+1} \dots a_n$, we have to choose which one of $n$ values to omit, then choose the remaining $n-1$ terms. When $a_i = a$ for all $i$, that just reduces to the usual power rule $D(a^n) = na^{n-1}$! The Leibniz rule states for types $a, b \in U$ that $D(ab) = a + b$, which means that omitting an $a$ leaves us with a $b$ value, and omitting an $b$ leaves us with an $a$ value.
+
+## Differential forms involving data structures
+
+One advantage of doing algebra in a category of modules is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I would still try to carry over as much of the theory as possible to the context of modules.
+
+A differential form is usually associated with a smooth manifold, but we can generalize it as the [universal differential envelope](https://ncatlab.org/nlab/show/universal+differential+envelope) of our derivative $D$. Let $\mu: A \otimes A \to A$ be the multiplication map, then we have a cochain complex of abelian groups
+
+$$
+0 \to \Omega^0(A) \xrightarrow{d} \Omega^1(A) \xrightarrow{d} \dots
+$$
+
+where $\Omega^0(A) = A, \Omega^1(A) = \ker(\mu), \Omega^k(A) = \Omega^1(A)^{k}$, and
+
+$$
+dp = 1 \otimes p - p \otimes 1
+$$
+
+This is universal in that there is a unique group homomorphism $\varphi : \Omega^1(A) \to A$ such that $\varphi d = D$.
