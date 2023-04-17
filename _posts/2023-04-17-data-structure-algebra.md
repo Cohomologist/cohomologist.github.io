@@ -46,4 +46,4 @@ $$
 A/\langle m_a - 1 - a \rangle
 $$
 
-For all nonprimitive types in $U$, we should impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$.
+For all nonprimitive types in $U$, we want to impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$.
