@@ -209,7 +209,7 @@ newtype Reader r a = Reader {getReader :: r -> a}
 and we want to develop an algebraic theory allowing us to more easily work with `Reader` expressions.
 
 ### Interlude: Functions are (sometimes) values
-I used the term "value" loosely, even referring to functions `r -> a` as values. This is deliberate, as sometimes, functions should be treated as mere values! For example, a function $f: \{\bullet\} \to A$ from a one-element set is just a value of $A$. We can apply a function $g: A \to B$ to that value by just composing the functions: $gf: \{\bullet\} \to B$ points to a value of $B$. 
+I used the term "value" loosely, even referring to functions `r -> a` as values. This is deliberate, as sometimes, functions should be treated as mere values! For example, a function $f: \{\bullet\} \to A$ from a one-element set is just a value of $A$. We can apply a function $g: A \to B$ to that value by just composing the functions: $gf: \{\bullet\} \to B$.
 
 In this case, `r` might not be the `()` type (the closest analog to the one-element set in Haskell), so how are functions `f :: r -> a` still "values"? Well, for any function `g :: a -> b`, there is an obvious way to lift it to a function `(r -> a) -> (r -> b)`:
 
