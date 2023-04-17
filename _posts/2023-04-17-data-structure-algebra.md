@@ -42,8 +42,8 @@ $$
 
 And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $A$ by an ideal which forces the equality to hold:
 
-```haskell
+$$
 A/\langle m_a - 1 - a \rangle
-```
+$$
 
 For all nonprimitive types in $U$, we should impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subset A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$.
