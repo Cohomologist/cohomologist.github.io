@@ -34,7 +34,7 @@ But we can also represent `Foo` as the polynomial $a(a + a)$ and `Bar` as the po
 ## Data structures as a free $\mathbb{Z}$-algebra
 Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here. We can form the free $\mathbb{Z}$-module $M = \mathbb{Z}[U]$ as linear combinations of types with integer coefficients. Finally, we can define multiplication as a bilinear map that simply joins words $u, w$ together: $u \cdot w = uw$.
 
-Finally, we turn $M$ into a commutative unital algebra $A$ as the quotient
+Finally, we turn $M$ into a commutative unital associative algebra $A$ as the quotient
 
 $$
 A = M/\langle uw = wu, 1w = w1 = w \mid u, w \in M \rangle
@@ -46,4 +46,4 @@ $$
 A/\langle m_a - 1 - a \rangle
 $$
 
-For all nonprimitive types in $U$, we should impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subset A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$.
+For all nonprimitive types in $U$, we should impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$.
