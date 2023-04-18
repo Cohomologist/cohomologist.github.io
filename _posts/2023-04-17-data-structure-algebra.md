@@ -40,13 +40,13 @@ $$
 F = M/\langle uw = wu, 1w = w1 = w \mid u, w \in M \rangle
 $$
 
-And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $F$ by an ideal which forces the equality to hold:
+And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types, perhaps recursively? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $F$ by an ideal which forces the equality to hold:
 
 $$
 A = F/\langle m_a - 1 - a \rangle
 $$
 
-For all nonprimitive types in $U$, we want to impose the relations $R$ to yield a quotient algebra $F/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq F$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $F/R$ should contain an element of $P$. From now on, whenever we mention $A$, we don't mention a specific choice of $U$, assume that we let $U$ be the primitive types along with any nonprimitive types we use which we will provide suitable relations for.
+We can also define recursive types by freely adding fixed points. For example, a binary tree $t$ with values of type $a$ is represented by the relation $t = 1 + at^2$.
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
@@ -82,11 +82,23 @@ One advantage of doing algebra in a category of modules is the vast number of co
 A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
 
 $$
-d1 = 0, d(pq) = (dp)q + p(dq), d(p+q) = dp + dq, (dp)q = p(dq)
+d1 = 0, d(pq) = q \cdot (dp) + p \cdot (dq), d(p+q) = dp + dq
 $$
 
 ### Partial derivatives
-Often, we want to excise a specific part of a structure rather than an arbitrary part. For example, consider the list
+Often, we want to excise a specific part of a structure rather than an arbitrary part. For example, consider a list $L_a$ of type $a$. We can obtain the algebra for lists $A$ by quotienting the free algebra:
+
+$$
+A = F/\langle L_a = 1 + aL_a \mid a \in F \rangle
+$$
+
+Then the differential of $L_a$ is
+
+$$
+\begin{align}
+dL_a &= 
+\end{align}
+$$
 
 ### Cohomology on $A$
 
