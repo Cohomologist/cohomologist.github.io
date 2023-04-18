@@ -77,18 +77,22 @@ Essentially, the derivative punctures a *hole* into a data structure. When we om
 
 ## Differential forms involving data structures
 
-One advantage of doing algebra in a category of modules is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I would still try to carry over as much of the theory as possible to the context of modules.
+One advantage of doing algebra in a category of modules is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I'd still try to carry over as much of the theory as possible to the context of modules because they're just so damned good!
 
-A differential form is usually associated with a smooth manifold, but we can generalize it as the [universal differential envelope](https://ncatlab.org/nlab/show/universal+differential+envelope) of our derivative $D$. Let $\mu: A \otimes A \to A$ be the multiplication map, then we have a cochain complex of abelian groups
-
-$$
-0 \to \Omega^0(A) \xrightarrow{d} \Omega^1(A) \xrightarrow{d} \dots
-$$
-
-where $\Omega^0(A) = A, \Omega^1(A) = \ker(\mu), \Omega^k(A) = \Omega^1(A)^{k}$, and
+A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the abelian group of Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free module over the images $dp$ for all $p \in A$, modulo the relations
 
 $$
-dp = 1 \otimes p - p \otimes 1
+d1 = 0, d(pq) = (dp)q + p(dq), d(p+q) = dp + dq, (dp)q = p(dq)
 $$
 
-This is universal in that there is a unique group homomorphism $\varphi : \Omega^1(A) \to A$ such that $\varphi d = D$.
+We can form the de Rham complex
+
+$$
+0 \to \Omega^0(A) \xrightarrow{d} \Omega^1(A) \xrightarrow{d} \Omega^2(A) \xrightarrow{d} \dots
+$$
+
+where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ fpr $k \geq 2$, from which we can get the de Rham cohomology
+
+$$
+0 \to H^0(A) \to H^1(A) \to H^2(A) \to \dots
+$$
