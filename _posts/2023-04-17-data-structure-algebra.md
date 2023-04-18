@@ -91,7 +91,7 @@ $$
 0 \to \Omega^0(A) \xrightarrow{d} \Omega^1(A) \xrightarrow{d} \Omega^2(A) \xrightarrow{d} \dots
 $$
 
-where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ fpr $k \geq 2$, from which we can get the de Rham cohomology
+where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ for $k \geq 2$, from which we can get the de Rham cohomology
 
 $$
 0 \to H^0(A) \to H^1(A) \to H^2(A) \to \dots
