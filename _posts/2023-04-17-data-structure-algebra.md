@@ -79,7 +79,7 @@ Essentially, the derivative punctures a *hole* into a data structure. When we om
 
 One advantage of doing algebra in a category of modules is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I'd still try to carry over as much of the theory as possible to the context of modules because they're just so damned good!
 
-A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the abelian group of Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free module over the images $dp$ for all $p \in A$, modulo the relations
+A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
 
 $$
 d1 = 0, d(pq) = (dp)q + p(dq), d(p+q) = dp + dq, (dp)q = p(dq)
