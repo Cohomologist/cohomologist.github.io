@@ -34,19 +34,19 @@ But we can also represent `Foo` as the polynomial $a(a + a)$ and `Bar` as the po
 ## Data structures as a free algebra
 Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry!). We can form the free $\mathbb{Z}$-module $M = \mathbb{Z}[U]$ as linear combinations of types with integer coefficients. Finally, we can define multiplication as simply joining words $u, w$ together: $u \cdot w = uw$.
 
-Finally, we turn $M$ into a free commutative unital associative algebra $A$ as the quotient
+Finally, we turn $M$ into a free commutative unital associative algebra $F$ as the quotient
 
 $$
-A = M/\langle uw = wu, 1w = w1 = w \mid u, w \in M \rangle
+F = M/\langle uw = wu, 1w = w1 = w \mid u, w \in M \rangle
 $$
 
-And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $A$ by an ideal which forces the equality to hold:
+And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $F$ by an ideal which forces the equality to hold:
 
 $$
-A/\langle m_a - 1 - a \rangle
+A = F/\langle m_a - 1 - a \rangle
 $$
 
-For all nonprimitive types in $U$, we want to impose the relations $R$ to yield a quotient algebra $A/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq A$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $A/R$ should contain an element of $P$. From now on, whenever we use this algebra, if we don't mention a specific choice of $U$, assume that we let $U$ be the primitive types along with any nonprimitive types we use which we will provide suitable relations for.
+For all nonprimitive types in $U$, we want to impose the relations $R$ to yield a quotient algebra $F/R$ that allow us to reduce them to a sum and product of primitive types. In other words, if $P \subseteq F$ is the subalgebra consisting only of sums and products of primitive types, every equivalence class in $F/R$ should contain an element of $P$. From now on, whenever we mention $A$, we don't mention a specific choice of $U$, assume that we let $U$ be the primitive types along with any nonprimitive types we use which we will provide suitable relations for.
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
