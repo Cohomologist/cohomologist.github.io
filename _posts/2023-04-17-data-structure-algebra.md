@@ -85,6 +85,11 @@ $$
 d1 = 0, d(pq) = (dp)q + p(dq), d(p+q) = dp + dq, (dp)q = p(dq)
 $$
 
+### Partial derivatives
+Often, we want to excise a specific part of a structure rather than an arbitrary part. For example, consider the list
+
+### Cohomology on $A$
+
 We can form the de Rham complex
 
 $$
@@ -96,3 +101,4 @@ where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ for $k \geq 2
 $$
 0 \to H^0(A) \to H^1(A) \to H^2(A) \to \dots
 $$
+
