@@ -59,7 +59,7 @@ $$
 D(pq) = D(p)q + pD(q)
 $$
 
-and we can define the derivative in this case to be the derivation $D(a) = 1$ for all $a \in U$. We can uniquely extend this to the whole algebra using the Leibniz rule and the linearity of $D$. The derivative $D$ acts just like you would expect: $D(a^n) = na^{n-1}$ for $a \in U$. 
+At least for now, we can define the derivative in this case to be the derivation $D(a) = 1$ for all $a \in U$. We can uniquely extend this to the whole algebra using the Leibniz rule and the linearity of $D$. The derivative $D$ acts just like you would expect: $D(a^n) = na^{n-1}$ for $a \in U$. 
 
 Okay, cool, but what does the derivative actually mean? Well, consider the `Either a b` type for types `a, b` in $U$:
 
@@ -84,6 +84,14 @@ A differential form is usually associated with a smooth manifold, but we can gen
 $$
 d1 = 0, d(pq) = q \cdot (dp) + p \cdot (dq), d(p+q) = dp + dq
 $$
+
+Differential forms allow us to express the space of all derivations simply as the space of $A$-linear maps
+
+$$
+\mathop{\rm Der}(A, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1, -)
+$$
+
+by essentially requiring the Leibniz rule to hold.
 
 ### Partial derivatives
 Often, we want to excise a specific part of a structure rather than an arbitrary part. For example, consider a list $L_a$ of type $a$. We can obtain the algebra for lists $A$ by quotienting the free algebra:
