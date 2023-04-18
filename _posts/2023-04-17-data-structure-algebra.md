@@ -82,7 +82,7 @@ One advantage of doing algebra in a category of modules is the vast number of co
 A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
 
 $$
-d1 = 0, d(pq) = q \cdot (dp) + p \cdot (dq), d(p+q) = dp + dq
+d1 = 0, d(pq) = q \cdot dp + p \cdot dq, d(p+q) = dp + dq
 $$
 
 Differential forms allow us to express the space of all derivations simply as the space of $A$-linear maps
