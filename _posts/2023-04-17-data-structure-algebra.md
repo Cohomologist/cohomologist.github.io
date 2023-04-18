@@ -88,7 +88,7 @@ $$
 Differential forms allow us to express the space of all derivations simply as the space of $A$-linear maps
 
 $$
-\mathop{\rm Der}(A, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1, -)
+\mathop{\rm Der}(A, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1(A), -)
 $$
 
 by essentially requiring the Leibniz rule to hold.
