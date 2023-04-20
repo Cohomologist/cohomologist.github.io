@@ -53,7 +53,7 @@ $$
 D\left(\sum_{i} a_i U_i\right) = \sum_i a_i D(U_i)
 $$
 
-where $D(U_i)$ is defined as $D(a) = 1$ for each type $a$ in the monomial $U_i$, and extended by the Leibniz rule. Okay, cool, but what does the derivative actually mean? Well, consider the `Either a b` type for types `a, b` in $U$:
+where $D(U_i)$ is defined as $D(a) = 1$ for each type $a$ in the monomial $U_i$, and extended by the Leibniz rule. Okay, cool, but what does the derivative actually mean? Well, consider the ordered pair type `Pair a b` type for types `a, b` in $U$:
 
 ```haskell
 data Pair a b = Pair a b
@@ -68,7 +68,7 @@ $$
 Essentially, the derivative punctures a *hole* into a data structure. When we omit a single part of a `Pair`, either the `a` or the `b`, we either have a `Pair a _` or a `Pair _ b` remaining. When we construct a product type $a_1 \dots a_n$, we have to give a value for each type $a_i$. But when we omit an arbitrary term $a_i$ so we only have to give $a_1 \dots a_{i-1} a_{i+1} \dots a_n$, we have to choose which one of $n$ values to omit, then choose the remaining $n-1$ terms. When $a_i = a$ for all $i$, that just reduces to the usual power rule $D(a^n) = na^{n-1}$! The Leibniz rule states for types $a, b \in U$ that $D(ab) = a + b$, which means that omitting an $a$ leaves us with a $b$ value, and omitting an $b$ leaves us with an $a$ value.
 
 ## Inductive types as initial algebras
-In Haskell, we can model inductive types with possibly recursive constructors as initial algebras of an endofunctor $F$. For example, the type `List a` with constructor
+In Haskell, unfortunately we can't describe infinite sums which is one way to describe data structures like lists and trees. But we can model inductive types with possibly recursive constructors as initial algebras of an endofunctor $F$. For example, the type `List a` with constructor
 
 ```haskell
 data List a = Nil | Cons a
@@ -78,7 +78,22 @@ is the carrier for an initial algebra of the endofunctor
 
 ```haskell
 data F b = Nil' | Cons' a b
+
+fmap f Nil' = Nil'
+fmap f (Cons' a b) = Cons' a (f b)
 ```
+
+To model these types in our algebra, we can pretend that infinite sums exist and use [Adámek's fixed point theorem](https://ncatlab.org/nlab/show/Ad%C3%A1mek%27s+fixed+point+theorem) to compute the power series corresponding to our type. Given our initial object $0$, the carrier of an initial algebra for an endofunctor $F$ is simply the inductive limit
+
+$$
+\mathop{\rm colim}(0 \to F(0) \to F^2(0) \to F^3(0) \to \dots)
+$$
+
+Letting $p_i$ be the polynomial associated to $F^n(0)$:
+
+$$
+p_0 = 0, p_1 = 1 + a, p_2 = 1 + a(1+a), \dots
+$$
 
 ## Differential forms involving data structures
 
