@@ -10,7 +10,7 @@ data Maybe a = Just a | Nothing
 data List a = Nil | Cons a (List a)
 ```
 
-Why are they called sums and products? A major reason is that the usual laws that we expect from sums and products hold for data structures as well, even if only up to isomorphism. Let $0$ denote the `Void` type, $1$ denote a singleton type `()`, and we will assume that all type variables have already been instantiated so that each term is a proper type which has kind `*`. Then, for example, the types
+Why are they called sums and products? A big reason is that the usual laws that we expect from sums and products hold for data structures as well, even if only up to isomorphism. Let $0$ denote the `Void` type, $1$ denote a singleton type `()`, and we will assume that all type variables have already been instantiated so that each term is a proper type which has kind `*`. Then, for example, the types
 
 ```haskell
 data Foo a = Foo a (Either a a)
@@ -31,22 +31,10 @@ backward (Bar2 x y) = Foo x (Right y)
 
 But we can also represent `Foo` as the polynomial $a(a + a)$ and `Bar` as the polynomial $2a^2$, but $a(a+a) = 2a^2$. And as we will see, there is no coincidence that these types are isomorphic.
 
-## Data structures as a free algebra
-Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry!). We can form the free $\mathbb{Z}$-module $M = \mathbb{Z}[U]$ as linear combinations of types with integer coefficients. Finally, we can define multiplication as simply joining words $u, w$ together: $u \cdot w = uw$.
+## The ring of data structures
+Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry!). We can form a ring $A = \mathbb{Z}[[U]]$ of power series with integer coefficients and terms being mononials in $U$. For example, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`.
 
-Finally, we turn $M$ into a free commutative unital associative algebra $F$ as the quotient
-
-$$
-F = M/\langle uw = wu, 1w = w1 = w \mid u, w \in M \rangle
-$$
-
-And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product represents a product type `(a, b)`. But how do we represent types that are constructed from other types, perhaps recursively? We can just quotient $A$ by relations representing those constructors. For example, if $m_a = 1 + a$ represents the `Maybe a` type, we just quotient $F$ by an ideal which forces the equality to hold:
-
-$$
-A = F/\langle m_a - 1 - a \rangle
-$$
-
-We can also define recursive types by freely adding fixed points. For example, a binary tree $t$ with values of type $a$ is represented by the relation $t = 1 + at^2$.
+And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product $ab$ represents a product type `(a, b)`. Inductive types can be represented as infinite series, and we can easily embed $A$ into $\mathbb{C}[[U]]$ when we need analytic tools to work with our types.
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
@@ -59,9 +47,13 @@ $$
 D(pq) = D(p)q + pD(q)
 $$
 
-At least for now, we can define the derivative in this case to be the derivation $D(a) = 1$ for all $a \in U$. We can uniquely extend this to the whole algebra using the Leibniz rule and the linearity of $D$. The derivative $D$ acts just like you would expect: $D(a^n) = na^{n-1}$ for $a \in U$. 
+We can define the usual derivation as
 
-Okay, cool, but what does the derivative actually mean? Well, consider the `Either a b` type for types `a, b` in $U$:
+$$
+D\left(\sum_{i} a_i U_i\right) = \sum_i a_i D(U_i)
+$$
+
+where $D(U_i)$ is defined as $D(a) = 1$ for each type $a$ in the monomial $U_i$, and extended by the Leibniz rule. Okay, cool, but what does the derivative actually mean? Well, consider the `Either a b` type for types `a, b` in $U$:
 
 ```haskell
 data Pair a b = Pair a b
@@ -75,11 +67,24 @@ $$
 
 Essentially, the derivative punctures a *hole* into a data structure. When we omit a single part of a `Pair`, either the `a` or the `b`, we either have a `Pair a _` or a `Pair _ b` remaining. When we construct a product type $a_1 \dots a_n$, we have to give a value for each type $a_i$. But when we omit an arbitrary term $a_i$ so we only have to give $a_1 \dots a_{i-1} a_{i+1} \dots a_n$, we have to choose which one of $n$ values to omit, then choose the remaining $n-1$ terms. When $a_i = a$ for all $i$, that just reduces to the usual power rule $D(a^n) = na^{n-1}$! The Leibniz rule states for types $a, b \in U$ that $D(ab) = a + b$, which means that omitting an $a$ leaves us with a $b$ value, and omitting an $b$ leaves us with an $a$ value.
 
+## Inductive types as initial algebras
+In Haskell, we can model inductive types with possibly recursive constructors as initial algebras of an endofunctor $F$. For example, the type `List a` with constructor
+
+```haskell
+data List a = Nil | Cons a
+```
+
+is the carrier for an initial algebra of the endofunctor
+
+```haskell
+data F b = Nil' | Cons' a b
+```
+
 ## Differential forms involving data structures
 
-One advantage of doing algebra in a category of modules is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I'd still try to carry over as much of the theory as possible to the context of modules because they're just so damned good!
+One advantage of doing algebra in a category of modules (rings are $\mathbb{Z}$-modules) is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I'd still try to carry over as much of the theory as possible to the context of modules because they're just so damned good!
 
-A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our algebra $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
+A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our ring $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
 
 $$
 d1 = 0, d(pq) = q \cdot dp + p \cdot dq, d(p+q) = dp + dq
@@ -91,22 +96,9 @@ $$
 \mathop{\rm Der}(A, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1(A), -)
 $$
 
+where given a derivation $D: A \to M$, we associate the linear map $D': \Omega^1(A) \to M$ defined on the differentials as $D'(dp) = D(p)$.
+
 by essentially requiring the Leibniz rule to hold.
-
-### Partial derivatives
-Often, we want to excise a specific part of a structure rather than an arbitrary part. For example, consider a list $L_a$ of type $a$. We can obtain the algebra for lists $A$ by quotienting the free algebra:
-
-$$
-A = F/\langle L_a = 1 + aL_a \mid a \in F \rangle
-$$
-
-Then the differential of $L_a$ is
-
-$$
-\begin{align}
-dL_a &= 
-\end{align}
-$$
 
 ### Cohomology on $A$
 
@@ -121,4 +113,3 @@ where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ for $k \geq 2
 $$
 0 \to H^0(A) \to H^1(A) \to H^2(A) \to \dots
 $$
-
