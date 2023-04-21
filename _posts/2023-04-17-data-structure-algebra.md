@@ -2,7 +2,10 @@
 published: true
 title: Data structures and algebra
 ---
-
+$$
+\newcommand\Hom{\mathrm{Hom}}
+\newcommand\Spec{\mathrm{Spec}}
+$$
 I think one of the most magical things in all of computer science is that we can reason with data structures algebraically. Many data structures can be described as a sum and product of types:
 
 ```haskell
@@ -32,6 +35,46 @@ backward (Bar2 x y) = Foo x (Right y)
 But we can also represent `Foo` as the polynomial $a(a + a)$ and `Bar` as the polynomial $2a^2$, but $a(a+a) = 2a^2$. And as we will see, there is no coincidence that these types are isomorphic.
 
 ## The ring of data structures
+
+Algebraic data types in Haskell are defined as 
+
+```
+type = constructor
+```
+
+and a constructor is just a function
+
+```
+constructor -> type
+```
+
+With constructors, we have sum types and product types, and up to isomorphism, we have the identities
+
+```haskell
+-- Sums
+Either (Either a b) c == Either a (Either b c) -- Associativity
+Either a Void == Either Void a == a -- Identity
+Either a b == Either b a -- Commutativity
+
+-- Products
+((a, b), c) = (a, (b, c)) -- Associativity
+(a, ()) == ((), a) == a -- Identity
+(a, Either b c) == Either (a, b) (a, c) -- Left distributivity
+(Either a b, c) = Either (a, c) (b, c) -- Right distributivity
+```
+
+Already, we almost have a ring structure on types. All we're missing is being able to take additive inverses types, and here is where it gets interesting. We can define types inductively in Haskell, which means that a type constructor can potentially refer to itself:
+
+```haskell
+data List a = Nil | Cons a (List a)
+```
+
+This can be represented by an equation $\ell = 1 + a\ell$. Rearranging gives us $1 + a\ell - \ell = 0$. But in a ring where we can represent power series, the series $1 + a + a^2 + \dots$ is a solution to this equation, and this represents the fact that a list can contain any number of values of $a$. So while "negative types" don't mean any particular type, we will still want additive inverses in our ring - even if they're formal - so we can represent equations and reason with inductive types.
+
+We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as a representable presheaf of rings $\Spec(\mathbb{Z}[x]/(p)) \cong \Hom(\mathbb{Z}[x]/(p), -)$.
+
+### The power series model
+
 Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry, this post is more of a random amalgamation of thoughts than a serious theory.)
 
 We can form a ring $A = \mathbb{Z}[[U]]$ of power series with integer coefficients and terms being mononials in $U$. For example, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`.
