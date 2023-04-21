@@ -63,7 +63,7 @@ Either a b == Either b a -- Commutativity
 (Either a b, c) = Either (a, c) (b, c) -- Right distributivity
 ```
 
-Already, we almost have a ring structure on types. All we're missing is being able to take additive inverses types, and here is where it gets interesting. We can define types inductively in Haskell, which means that a type constructor can potentially refer to itself:
+Already, we almost have a ring structure on types. All we're missing is being able to take additive inverses of types, and here is where it gets interesting. We can define types inductively in Haskell, which means that a type constructor can potentially refer to itself:
 
 ```haskell
 data List a = Nil | Cons a (List a)
