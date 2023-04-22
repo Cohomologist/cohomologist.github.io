@@ -60,17 +60,15 @@ Lists can be represented by an equation $\ell = 1 + a\ell$. Rearranging gives us
 
 We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as an affine scheme $\Spec(\mathbb{Z}[x]/(p)) \cong \Hom(\mathbb{Z}[x]/(p), -)$. A homomorphism $\varphi \in \Hom(\mathbb{Z}[x]/(p), A)$ represents a root $\varphi(x)$. And yes, we're getting ourselves into a bit of algebraic geometry here (but that's easier than [AbstractSingletonProxyFactoryBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html)).
 
-## Lord of the rings
+## Representing types
 
-Let's consider two concrete examples of rings we could use to model data structures.
-
-### Power series
+### As power series
 
 Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry, this post is more of a random amalgamation of thoughts than a serious theory.) We can form a ring $\mathbb{Z}[[U]]$ of power series with integer coefficients and terms being mononials in $U$.
 
 With power series, we can represent inductive types. As mentioned above, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`. Furthermore, we can use analytic machinery when working with power series - for data structures of all things!
 
-### Fixed points
+### As fixed points
 
 Let's cover a bit of background first.
 
@@ -121,8 +119,9 @@ fmap absurd Nil' == Nil'
 
 So we can see that $F^n$ simply adjoins a list of length $n$ to the type of lists of length $\leq n - 1$, and the initial function gets lifted to the corresponding inclusion. That means that a list of length $n$ is itself an equivalence class across all $F^n(0)$ containing it, so the series is simply $1 + a + a^2 + \dots$.
 
-#### Ring of initial algebras
-Again let $U$ be a set of proper types, but now consider the *category* (or full subcategory) $U^*$ of polynomial endofunctors that map a type $a$ to a 
+#### Formal schemes
+
+An overview of formal schemes is covered by [Strickland (2000)](https://arxiv.org/abs/math/0011121).
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
