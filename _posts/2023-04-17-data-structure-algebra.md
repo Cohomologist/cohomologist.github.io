@@ -122,8 +122,7 @@ fmap absurd Nil' == Nil'
 So we can see that $F^n$ simply adjoins a list of length $n$ to the type of lists of length $\leq n - 1$, and the initial function gets lifted to the corresponding inclusion. That means that a list of length $n$ is itself an equivalence class across all $F^n(0)$ containing it, so the series is simply $1 + a + a^2 + \dots$.
 
 #### Ring of initial algebras
-
-Again let $U$ be a set of proper types, but now consider the *category* (or full subcategory) $U^*$
+Again let $U$ be a set of proper types, but now consider the *category* (or full subcategory) $U^*$ of polynomial endofunctors that map a type $a$ to a 
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
