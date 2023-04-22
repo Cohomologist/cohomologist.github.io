@@ -35,20 +35,7 @@ backward (Bar2 x y) = Foo x (Right y)
 But we can also represent `Foo` as the polynomial $a(a + a)$ and `Bar` as the polynomial $2a^2$, but $a(a+a) = 2a^2$. And as we will see, there is no coincidence that these types are isomorphic.
 
 ## The ring of data structures
-
-Algebraic data types in Haskell are defined as 
-
-```
-type = constructor
-```
-
-and a constructor is just a function
-
-```
-constructor -> type
-```
-
-With constructors, we have sum types and product types, and up to isomorphism, we have the identities
+We have sum types and product types, and up to isomorphism, we have the identities
 
 ```haskell
 -- Sums
@@ -69,52 +56,25 @@ Already, we almost have a ring structure on types. All we're missing is being ab
 data List a = Nil | Cons a (List a)
 ```
 
-This can be represented by an equation $\ell = 1 + a\ell$. Rearranging gives us $1 + a\ell - \ell = 0$. But in a ring where we can represent power series, the series $1 + a + a^2 + \dots$ is a solution to this equation, and this represents the fact that a list can contain any number of values of $a$. So while "negative types" don't mean any particular type, we will still want additive inverses in our ring - even if they're formal - so we can represent equations and reason with inductive types.
+This can be represented by an equation $\ell = 1 + a\ell$. Rearranging gives us $1 + a\ell - \ell = 0$. In a ring where we can represent power series, the series $1 + a + a^2 + \dots$ is a solution to this equation, and this represents the fact that a list can contain any number of values of $a$. So while "negative types" don't mean any particular type, we will still want additive inverses in our ring - even if they're formal - so we can represent equations and reason with inductive types.
 
-We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as a representable presheaf of rings $\Spec(\mathbb{Z}[x]/(p)) \cong \Hom(\mathbb{Z}[x]/(p), -)$.
+We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as an affine scheme $\Spec(\mathbb{Z}[x]/(p)) \cong \Hom(\mathbb{Z}[x]/(p), -)$. A homomorphism $\varphi \in \Hom(\mathbb{Z}[x]/(p), A)$ represents a root $\varphi(x)$. And yes, we're getting ourselves into a bit of algebraic geometry here (but that's easier than [AbstractSingletonProxyFactoryBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html)).
 
-### The power series model
+## Lord of the rings
 
-Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry, this post is more of a random amalgamation of thoughts than a serious theory.)
+Let's consider two concrete examples of rings we could use to model data structures.
 
-We can form a ring $A = \mathbb{Z}[[U]]$ of power series with integer coefficients and terms being mononials in $U$. For example, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`.
+### Power series
 
-And there we have it: now we have a way of reasoning about algebraic data structures. A sum $a + b$ represents a sum type `Either a b`, and a product $ab$ represents a product type `(a, b)`. Inductive types can be represented as infinite series, and we can easily embed $A$ into $\mathbb{C}[[U]]$ when we need analytic tools to work with our types.
+Let $U$ denote a set of of isomorphism classes of proper types with the singleton type $1 \in U$. We'll be fast and loose with our terminology here: even though there are more rigorous ways of talking about types, since this is a blog post, we'll handwave a bit here (sorry, this post is more of a random amalgamation of thoughts than a serious theory.) We can form a ring $A = \mathbb{Z}[[U]]$ of power series with integer coefficients and terms being mononials in $U$.
 
-## Derivatives of data structures
-Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
+With power series, we can represent inductive types. As mentioned above, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`. Furthermore, we can use analytic machinery when working with power series - for data structures of all things!
 
-> Abbott et al. (2005). [∂ for data: differentiating data structures](http://strictlypositive.org/dfordata.pdf). Fudamenta Informaticae.
+### Fixed points
 
-but we will use different language to describe it. A *derivation* is an operator $D: A \to A$ that satisfies the Leibniz rule:
+Let's cover a bit of background first.
 
-$$
-D(pq) = D(p)q + pD(q)
-$$
-
-We can define the usual derivation as
-
-$$
-D\left(\sum_{i} a_i U_i\right) = \sum_i a_i D(U_i)
-$$
-
-where $D(U_i)$ is defined as $D(a) = 1$ for each type $a$ in the monomial $U_i$, and extended by the Leibniz rule. Okay, cool, but what does the derivative actually mean? Well, consider the ordered pair type `Pair a b` type for types `a, b` in $U$:
-
-```haskell
-data Pair a b = Pair a b
-```
-
-Let $p_{ab}$ denote this type. Then imposing the corresponding relation $p_{ab} = ab$, we can take the derivative to get
-
-$$
-D(p_{ab}) = D(ab) = D(a)b + aD(b) = a + b
-$$
-
-Essentially, the derivative punctures a *hole* into a data structure. When we omit a single part of a `Pair`, either the `a` or the `b`, we either have a `Pair a _` or a `Pair _ b` remaining. When we construct a product type $a_1 \dots a_n$, we have to give a value for each type $a_i$. But when we omit an arbitrary term $a_i$ so we only have to give $a_1 \dots a_{i-1} a_{i+1} \dots a_n$, we have to choose which one of $n$ values to omit, then choose the remaining $n-1$ terms. When $a_i = a$ for all $i$, that just reduces to the usual power rule $D(a^n) = na^{n-1}$! The Leibniz rule states for types $a, b \in U$ that $D(ab) = a + b$, which means that omitting an $a$ leaves us with a $b$ value, and omitting an $b$ leaves us with an $a$ value.
-
-## Inductive types
-
-### As initial algebras
+#### Initial algebras
 In Haskell, unfortunately we can't describe infinite sums which is one way to describe data structures like lists and trees. But we can model inductive types with possibly recursive constructors as initial algebras of an endofunctor $F$. For example, the type `List a` with constructor
 
 ```haskell
@@ -161,22 +121,36 @@ fmap absurd Nil' == Nil'
 
 So we can see that $F^n$ simply adjoins a list of length $n$ to the type of lists of length $\leq n - 1$, and the initial function gets lifted to the corresponding inclusion. That means that a list of length $n$ is itself an equivalence class across all $F^n(0)$ containing it, so the series is simply $1 + a + a^2 + \dots$.
 
-### As fixed points
+## Derivatives of data structures
+Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
 
-Let's go back to the definition of a list again:
+> Abbott et al. (2005). [∂ for data: differentiating data structures](http://strictlypositive.org/dfordata.pdf). Fudamenta Informaticae.
+
+but we will use different language to describe it. A *derivation* is an operator $D: A \to A$ that satisfies the Leibniz rule:
+
+$$
+D(pq) = D(p)q + pD(q)
+$$
+
+We can define the usual derivation as
+
+$$
+D\left(\sum_{i} a_i U_i\right) = \sum_i a_i D(U_i)
+$$
+
+where $D(U_i)$ is defined as $D(a) = 1$ for each type $a$ in the monomial $U_i$, and extended by the Leibniz rule. Okay, cool, but what does the derivative actually mean? Well, consider the ordered pair type type for types `a, b` in $U$:
 
 ```haskell
-data List a = Nil | Cons a (List a)
+data (a, b) = (a, b)
 ```
 
-Let $\ell = 1 + a + a^2 + \dots$ be the series for our list. From the constructor above, it should satisfy $\ell = 1 + a\ell$, and indeed it does:
+Let $p_{ab}$ denote this type. Then imposing the corresponding relation $p_{ab} = ab$, we can take the derivative to get
 
 $$
-\ell = \sum_{n=0}^{\infty} a^n = 1 + \sum_{n=1}^{\infty} a^n = 1 + a\sum_{n=0}^{\infty} a^n = 1 + a\ell
+D(p_{ab}) = D(ab) = D(a)b + aD(b) = a + b
 $$
 
-So $\ell$ is a fixed point for the map $p \mapsto 1 + ap$. Is $\ell$ the only fixed point? 
-
+Essentially, the derivative punctures a *hole* into a data structure. When we omit a single part of an ordered pair, either the `a` or the `b`, we either have `(a, -)` or `(-, b)` remaining. When we construct a product type $a_1 \dots a_n$, we have to give a value for each type $a_i$. But when we omit an arbitrary term $a_i$ so we only have to give $a_1 \dots a_{i-1} a_{i+1} \dots a_n$, we have to choose which one of $n$ values to omit, then choose the remaining $n-1$ terms. When $a_i = a$ for all $i$, that just reduces to the usual power rule $D(a^n) = na^{n-1}$! The Leibniz rule states for types $a, b \in U$ that $D(ab) = a + b$, which means that omitting an $a$ leaves us with a $b$ value, and omitting an $b$ leaves us with an $a$ value.
 
 ## Differential forms involving data structures
 
