@@ -58,7 +58,7 @@ data List a = Nil | Cons a (List a)
 
 Lists can be represented by an equation $\ell = 1 + a\ell$. Rearranging gives us $1 + a\ell - \ell = 0$. In a ring where we can represent power series, the series $\ell = 1 + a + a^2 + \dots$ is a solution to this equation, and this represents the fact that a list can contain any number of values of $a$. So while "negative types" don't mean any particular type, we will still want additive inverses in our ring - even if they're formal - so we can represent equations and reason with inductive types.
 
-We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as an affine scheme $\Spec(\mathbb{Z}[x]/(p)) \cong \Hom(\mathbb{Z}[x]/(p), -)$. A homomorphism $\varphi \in \Hom(\mathbb{Z}[x]/(p), A)$ represents a root $\varphi(x)$. And yes, we're getting ourselves into a bit of algebraic geometry here (but that's easier than [AbstractSingletonProxyFactoryBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html)).
+We will not tie ourselves to any particular ring though, and express the roots of a polynomial $p$ with integer coefficients, representing solutions to some equation, simply as an affine scheme $\Spec(A[x]/(p)) \cong \Hom(A[x]/(p), -)$ for some ring $A$. A homomorphism $\varphi \in \Hom(A[x]/(p), A)$ represents a root $\varphi(x)$. And yes, we're getting ourselves into a bit of algebraic geometry here (but that's easier than [AbstractSingletonProxyFactoryBean](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html)).
 
 ## Representing types
 
@@ -121,7 +121,7 @@ So we can see that $F^n$ simply adjoins a list of length $n$ to the type of list
 
 #### Formal schemes
 
-An overview of formal schemes is covered by [Strickland (2000)](https://arxiv.org/abs/math/0011121).
+An overview of formal schemes is covered by [Strickland (2000)](https://arxiv.org/abs/math/0011121). Remember that we didn't want to stick to any particular ring when working with data structure polynomials. 
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
