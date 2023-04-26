@@ -158,32 +158,30 @@ Essentially, the derivative punctures a *hole* into a data structure. When we om
 
 One advantage of doing algebra in a category of modules (rings are $\mathbb{Z}$-modules) is the vast number of constructions we can use. Even if I were to be a bit less handwavy here, I'd still try to carry over as much of the theory as possible to the context of modules because they're just so damned good!
 
-A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given our ring $A$, we can form the Kähler differentials $\Omega^1(A)$ as the universal $A$-module where every derivation $A \to M$ factors uniquely through the universal map $d: A \to \Omega^1(A)$. One way to construct $\Omega^1(A)$ is as the free $A$-module over the images $dp$ for all $p \in A$, modulo the relations
+A differential form is usually associated with a smooth manifold, but we can generalize it using Kähler differentials. Given a ring $R$, we can form the Kähler differentials $\Omega^1(R)$ as the universal $R$-module where every derivation $R \to M$ factors uniquely through the universal map $d: R \to \Omega^1(R)$. One way to construct $\Omega^1(R)$ is as the free $R$-module over the images $dp$ for all $p \in R$, modulo the relations
 
 $$
 d1 = 0, d(pq) = q \cdot dp + p \cdot dq, d(p+q) = dp + dq
 $$
 
-Differential forms allow us to express the space of all derivations simply as the space of $A$-linear maps
+Differential forms allow us to express the space of all derivations simply as the space of $R$-linear maps
 
 $$
-\mathop{\rm Der}(A, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1(A), -)
+\mathop{\rm Der}(R, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1(R, -)
 $$
 
-where given a derivation $D: A \to M$, we associate the linear map $D': \Omega^1(A) \to M$ defined on the differentials as $D'(dp) = D(p)$.
+where given a derivation $D: R \to M$, we associate the linear map $D': \Omega^1(R) \to M$ defined on the differentials as $D'(dp) = D(p)$.
 
-by essentially requiring the Leibniz rule to hold.
-
-### Cohomology on $A$
+### Cohomology on $R$
 
 We can form the de Rham complex
 
 $$
-0 \to \Omega^0(A) \xrightarrow{d} \Omega^1(A) \xrightarrow{d} \Omega^2(A) \xrightarrow{d} \dots
+0 \to \Omega^0(R) \xrightarrow{d} \Omega^1(R) \xrightarrow{d} \Omega^2(R) \xrightarrow{d} \dots
 $$
 
-where $\Omega^0(A) = A$ and $\Omega^k(A) = \Omega^1(A)^{\wedge k}$ for $k \geq 2$, from which we can get the de Rham cohomology
+where $\Omega^0(R) = R$ and $\Omega^k(R) = \Omega^1(R)^{\wedge k}$ for $k \geq 2$, from which we can get the de Rham cohomology
 
 $$
-0 \to H^0(A) \to H^1(A) \to H^2(A) \to \dots
+0 \to H^0(R) \to H^1(R) \to H^2(R) \to \dots
 $$
