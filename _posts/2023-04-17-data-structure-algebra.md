@@ -68,11 +68,8 @@ Let $U$ denote a set of of isomorphism classes of proper types with the singleto
 
 With power series, we can represent inductive types. As mentioned above, the type represented by the series $1 + a + a^2 + \dots$ is simply the list type `List a`. Furthermore, we can use analytic machinery when working with power series - for data structures of all things!
 
-### As fixed points
+### As initial algebras
 
-Let's cover a bit of background first.
-
-#### Initial algebras
 In Haskell, unfortunately we can't describe infinite sums which is one way to describe data structures like lists and trees. But we can model inductive types with possibly recursive constructors as initial algebras of an endofunctor $F$. For example, the type `List a` with constructor
 
 ```haskell
@@ -119,16 +116,16 @@ fmap absurd Nil' == Nil'
 
 So we can see that $F^n$ simply adjoins a list of length $n$ to the type of lists of length $\leq n - 1$, and the initial function gets lifted to the corresponding inclusion. That means that a list of length $n$ is itself an equivalence class across all $F^n(0)$ containing it, so the series is simply $1 + a + a^2 + \dots$.
 
-#### Formal schemes
+### As points of schemes
 
-An overview of formal schemes is covered by [Strickland (2000)](https://arxiv.org/abs/math/0011121). Remember that we didn't want to stick to any particular ring when working with data structure polynomials. 
+
 
 ## Derivatives of data structures
 Of course, we have addition and multiplication, but we also take derivatives of data structures as well! This concept was introduced in the paper
 
 > Abbott et al. (2005). [∂ for data: differentiating data structures](http://strictlypositive.org/dfordata.pdf). Fudamenta Informaticae.
 
-but we will use different language to describe it. A *derivation* is an operator $D: A \to A$ that satisfies the Leibniz rule:
+but we will use different language to describe it. A *derivation* is an operator $D: R \to R$ that satisfies the Leibniz rule:
 
 $$
 D(pq) = D(p)q + pD(q)
@@ -167,7 +164,7 @@ $$
 Differential forms allow us to express the space of all derivations simply as the space of $R$-linear maps
 
 $$
-\mathop{\rm Der}(R, -) \cong \mathrm{Hom}_{A\mathrm{Mod}}(\Omega^1(R, -)
+\mathop{\rm Der}(R, -) \cong \mathrm{Hom}_{R\mathrm{Mod}}(\Omega^1(R, -)
 $$
 
 where given a derivation $D: R \to M$, we associate the linear map $D': \Omega^1(R) \to M$ defined on the differentials as $D'(dp) = D(p)$.
