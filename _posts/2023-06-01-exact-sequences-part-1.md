@@ -3,7 +3,7 @@ title: Understanding exact sequences (part 1)
 published: true
 ---
 <p style="display: none">
-$newcommand{\oto}[1]{\overset{#1}{\to}}\newcommand{\im}{\mathrm{im}}\newcommand{\coker}{\mathrm{coker}}\newcommand{\Hom}{\mathrm{Hom}}$
+$\newcommand{\oto}[1]{\overset{#1}{\to}}\newcommand{\im}{\mathrm{im}}\newcommand{\coker}{\mathrm{coker}}\newcommand{\Hom}{\mathrm{Hom}}$
 </p>**Exact sequences** provide a neat way to express relations between algebraic objects. An exact sequence is a chain of objects
 
 $$
