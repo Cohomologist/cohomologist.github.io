@@ -3,8 +3,6 @@ title: Understanding exact sequences (part 1)
 published: true
 ---
 
-## How do neural networks work?
-
 There are a lot of neural network models nowadays, but they all have one thing in common. Linear maps are still the workhorse of a neural network, but they are seasoned with a sprinkle of nonlinearity so that we can use them for decidedly nonlinear applications.
 
 > The deep learning researchers don't get credit for this idea. **Logistic regression** uses this same idea to represent the dependent variable as a probability. The secret spice is the sigmoid function $$\sigma(x) = \frac{1}{1 + e^{-x}}$$ which squishes the result of a linear regression to $(0, 1)$.
