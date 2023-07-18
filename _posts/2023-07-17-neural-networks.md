@@ -50,6 +50,8 @@ $$
 a = \sum_{i=1}^m w_ix_i = w \cdot x
 $$
 
+Here's the key thing to realize: **the neuron's weights represent what the neuron wants to detect**. The neuron is most strongly activated when it receives inputs similar to its weights – when the input vector $x$ is similar to the weight vector $w$. That is why our memory is content-addressable: our neurons literally activate themselves based on a measure of similarity.
+
 And since related groups of neurons tend to operate in parallel, we can often compute the activations of $n$ neurons linearly. We can represent the weights as a matrix where each row has the weights of a single neuron. Finally, while activations are just a dot product, the actual output of a neuron might not be. For example, a neuron might only produce an output when the activation exceeds a value. Huh, all of that seems really familiar. I wonder why they called it a "neural network" in the first place!
 
 #### The hidden layer computes similarity
@@ -208,3 +210,4 @@ Alternatively, as long as we transform the data to have $0$ mean, we can also re
 In AI research and practice, neuroscience is too often neglected. This is a great book about how the brain does its computations:
 
 > Rolls, E. T. (2016). Cerebral cortex: principles of operation. *Oxford University Press*.
+
