@@ -1,5 +1,5 @@
 ---
-title: Understanding exact sequences (part 1)
+title: How do neural networks work?
 published: true
 ---
 
