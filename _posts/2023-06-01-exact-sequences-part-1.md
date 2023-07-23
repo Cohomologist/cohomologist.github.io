@@ -1,6 +1,6 @@
 ---
 title: Understanding exact sequences (part 1)
-published: true
+published: false
 ---
 <p style="display: none">
 $\newcommand{\oto}[1]{\overset{#1}{\to}}\newcommand{\im}{\mathrm{im}}\newcommand{\coker}{\mathrm{coker}}\newcommand{\Hom}{\mathrm{Hom}}$
