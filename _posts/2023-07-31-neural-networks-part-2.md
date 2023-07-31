@@ -3,8 +3,6 @@ title: How do neural networks work? (Part 2, Encoding)
 published: true
 ---
 
-## How do neural networks work? (Part 2: Encoding)
-
 *If you haven't already, see [my previous post](https://dualcoding.net/neural-networks-part-1/) for the basic idea behind neural networks.*
 
 <img src="../images/computervsbrain.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />When we study the brain, we like to forget that it isn't a typical computer. We can't just pretend the brain implements a von Neumann architecture that performs its computations serially. If the brain performed one computation at a time, then we'd barely even be alive! That's because the brain is absolutely sluggish compared to a computer – while a computer only uses fast electrical signals, the brain has to also use slow chemical signals. While we talk about how many GHz a modern CPU runs at, a neuron fires at 200Hz if we're lucky. 
@@ -143,7 +141,7 @@ $$
 
 And passing it to our activation function $f$ described above, we get the output vector
 $$
-f(W\mathbf{e}\_x) = \begin{pmatrix}
+f(W\mathbf{e}\_{x}) = \begin{pmatrix}
 0 \\
 0 \\
 1 \\
