@@ -1,5 +1,5 @@
 ---
-title: How do neural networks work? (Part 2: Encoding)
+title: How do neural networks work? (Part 2, Encoding)
 published: true
 ---
 
