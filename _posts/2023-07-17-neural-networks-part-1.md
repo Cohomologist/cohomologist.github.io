@@ -1,5 +1,5 @@
 ---
-title: How do neural networks work? (Part 1: Motivation)
+title: How do neural networks work? (Part 1, Motivation)
 published: true
 ---
 Neural networks are *the* preferred model for the largest datasets and the toughest problems in machine learning. Neural networks are easy to grasp at first sight: they are just linear maps seasoned with a sprinkle of nonlinearity through activation functions, which allows the model to learn nonlinear functions. Despite their simplicity, we still treat neural networks as black boxes where we have not the slightest idea of what's going on inside. In this series of posts, I will explain the neuroscience behind neural networks, and show that when we understand the neuroscientific pinnings, we can finally pierce the black box and see a neural network in its true beauty.
