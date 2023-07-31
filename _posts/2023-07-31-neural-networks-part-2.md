@@ -12,7 +12,7 @@ But the brain has a trick up its sleeve – it runs its computations **in parall
 When we say a computation $f$ is linear, that just means we can break it into $n$ smaller computations $f\_1, \dots, f\_n$ on each component $x\_1, \dots, x\_n$:
 
 $$
-f(\mathbf{x}) = f\_1(x\_1) + \dots + f\_n(x\_n)
+f(\mathbf{x}) = f_1(x_1) + \dots + f_n(x_n)
 $$
 
 Linear computations are parallel computations too: instead of a single thread carrying all of the load, we can distribute  the smaller computations to multiple threads, and then simply take the sum of those computations. Addition is cheap, so the final step is blazing fast. 
@@ -47,7 +47,7 @@ In a hidden layer with $h$ neurons $1, \dots, h$, each neuron $i$ has a weight v
 
 
 $$
-\mathbf{w}\_i \cdot \mathbf{x} = \|\mathbf{w}\_i\| \|\mathbf{x}\| \cos(\theta)
+\mathbf{w}_i \cdot \mathbf{x} = \|\mathbf{w}_i\| \|\mathbf{x}\| \cos(\theta)
 $$
 
 
@@ -55,7 +55,7 @@ where $\theta$ is the angle between the two vectors. When they are both unit vec
 
 
 $$
-\mathbf{w}\_i \cdot \mathbf{x} = \cos(\theta)
+\mathbf{w}_i \cdot \mathbf{x} = \cos(\theta)
 $$
 
 
@@ -77,13 +77,13 @@ We can represent the list $a\_1, \dots, a\_n$ as a neural network with $2$-dimen
 
 $$
 W = \begin{pmatrix}
-\mathbf{w}\_1 \\
+\mathbf{w}_1 \\
 \vdots \\
-\mathbf{w}\_n
+\mathbf{w}_n
 \end{pmatrix} = \begin{pmatrix}
-\mathbf{e}\_{a\_1} \\
+\mathbf{e}_{a_1} \\
 \vdots \\
-\mathbf{e}\_{a\_n}
+\mathbf{e}_{a_n}
 \end{pmatrix}
 $$
 
@@ -121,7 +121,7 @@ Setting our target to $128$, we have
 
 
 $$
-W\mathbf{e}\_{128} = \begin{pmatrix}
+W\mathbf{e}_{128} = \begin{pmatrix}
 1 & 0 \\
 \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
 0 & 1 \\
@@ -141,7 +141,7 @@ $$
 
 And passing it to our activation function $f$ described above, we get the output vector
 $$
-f(W\mathbf{e}\_{x}) = \begin{pmatrix}
+f(W\mathbf{e}_{x}) = \begin{pmatrix}
 0 \\
 0 \\
 1 \\
@@ -153,11 +153,11 @@ $$
 
 Indeed, $128$ matches the third element of our list, and only the third element of the output vector is a $1$ with the rest being $0$s.
 
-Sometimes, we want to relate our target $t$ to other elements in the list, even if $t$ is not in the list itself. We could use a softer activation function that emits a positive output even when we don't have an exact match. For example, we could use ReLU activation: $f(x) = \max(0, x)$. This means that neuron $i$ would output the similarity $\mathbf{e}\_{t} \cdot \mathbf{e}\_{a\_i}$ as long as $|t - a\_i| \leq 128$, otherwise clamping it to $0$. If our target is $32$ in this case, we'd have before activation
+Sometimes, we want to relate our target $t$ to other elements in the list, even if $t$ is not in the list itself. We could use a softer activation function that emits a positive output even when we don't have an exact match. For example, we could use ReLU activation: $f(x) = \max(0, x)$. This means that neuron $i$ would output the similarity $\mathbf{e}\_{t} \cdot \mathbf{e}\_{a\_i}$ as long as the absolute difference between $t$ and $a\_i$ is less than $128$, otherwise clamping it to $0$. If our target is $32$ in this case, we'd have before activation
 
 
 $$
-W\mathbf{e}\_{32} \approx \begin{pmatrix}
+W\mathbf{e}_{32} \approx \begin{pmatrix}
 1 & 0 \\
 \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
 0 & 1 \\
@@ -179,7 +179,7 @@ and after activation
 
 
 $$
-f(W\mathbf{e}\_{32}) = \begin{pmatrix}
+f(W\mathbf{e}_{32}) = \begin{pmatrix}
 0.924 \\
 0.924 \\
 0.383 \\
