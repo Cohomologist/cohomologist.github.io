@@ -2,7 +2,6 @@
 title: How do neural networks work? (Part 2, Encoding)
 published: true
 ---
-## How do neural networks work? (Part 2: Encoding)
 
 *If you haven't already, see [my previous post](https://dualcoding.net/neural-networks-part-1/) for the basic idea behind neural networks.*
 
@@ -131,7 +130,7 @@ W\mathbf{e}_{128} = \begin{pmatrix}
 - 1 & 0
 \end{pmatrix} \begin{pmatrix}
 0 & 1
-\end{pmatrix} &= \begin{pmatrix}
+\end{pmatrix} = \begin{pmatrix}
 0 \\
 \frac{\sqrt{2}}{2} \\
 1 \\
@@ -167,7 +166,7 @@ W\mathbf{e}_{32} \approx \begin{pmatrix}
 - 1 & 0
 \end{pmatrix} \begin{pmatrix}
 0.924 & 0.383 
-\end{pmatrix} &= \begin{pmatrix}
+\end{pmatrix} = \begin{pmatrix}
 0.924 \\
 0.924 \\
 0.383 \\
