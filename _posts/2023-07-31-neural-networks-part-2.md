@@ -140,6 +140,7 @@ $$
 
 
 And passing it to our activation function $f$ described above, we get the output vector
+
 $$
 f(W\mathbf{e}_{x}) = \begin{pmatrix}
 0 \\
