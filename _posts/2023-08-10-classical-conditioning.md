@@ -1,4 +1,4 @@
----
+ ---
 title: "Classical conditioning: what's the point?"
 published: true
 ---
@@ -23,7 +23,7 @@ Luckily, as dangerous as predators are, predators also tend to be loud. The anim
 
 Through classical conditioning, the animal learns that they should not only be afraid when they see the predator right in their face (the conditioned stimulus), but they should also be afraid of any sign that a predator is approaching, such as footsteps (the unconditioned stimulus). Those aren't two separate stimuli that merit two separate responses, but instead one experience that merits one response. We aren't only limited to two stimuli: any number of stimuli that the animal can link to a single experience is fair game.
 
-Indeed, classical conditioning is all about learning how to perceive the world as more than the sum of its parts. Pavlov's dog might be living in a more peaceful world (even though they weren't big on the "ethics" thing back then), but the dog would find it perfectly sensical to salivate in response to the bell. If the bell seems to always ring every time they get their treats, then why treat those events differently? The ringing bell doesn't seem like just a ringing bell, but instead the start of a single experience: they're about to be eating good! And yes, Pavlov did eventually experiment with brutally ringing the bell while not giving Fido her treats in the end, and eventually Fido realized what was up and stopped drooling out precious saliva. But still, as unpredictable as the environment can be, the experiences we encounter can still have predictable beginnings. An ounce of prevention is worth a pound of cure, and prevention is all about recognizing an experience as early as possible. Classical conditioning makes it happen. Or at least, it's the start.
+Indeed, classical conditioning is all about learning how to perceive the world as more than the sum of its parts. Pavlov's dog might be living in a more peaceful world (even though they weren't big on the "ethics" thing back then), but the dog would find it perfectly sensical to salivate in response to the bell. If the bell seems to always ring every time they get their treats, then why treat those events differently? The ringing bell doesn't seem like just a ringing bell, but instead the start of a single experience: they're about to be eating good! And yes, Pavlov did eventually experiment with ringing the bell while not giving Fido her treats in the end, and eventually Fido realized what was up and stopped drooling out precious saliva. But still, as unpredictable as the environment can be, the experiences we encounter can still have predictable beginnings. An ounce of prevention is worth a pound of cure, and prevention is all about recognizing an experience as early as possible. Classical conditioning makes it happen. Or at least, it's the start.
 
 ### Beyond Pavlov
 
