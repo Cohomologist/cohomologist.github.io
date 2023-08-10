@@ -1,5 +1,5 @@
 ---
-title: Classical conditioning\: what's the point?
+title: "Classical conditioning: what's the point?"
 published: true
 ---
 
