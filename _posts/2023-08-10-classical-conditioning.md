@@ -9,7 +9,7 @@ Pavlov was doing an experiment on dogs' digestive processes, and he kept track o
 
 Usually, textbooks and lecturers illuminate classical conditioning using one of Pavlov's experiments: at first, the dog would hear a bell (the conditioned stimulus) at the same time they would sense food (the unconditioned stimulus). Usually, dogs salivate at the first sight or sound of food so they can prepare to digest it. But after a few trials, the dogs started to salivate when they heard the bell alone, even when the food is nowhere. It had seemed like the dog had learned a new behavior: salivate because of a bell, not just because of food!
 
-Okay, that is certainly interesting, but what's the point? We learn that it is a key learning process, but learning to salivate at the ding of bell sounds nothing like the learning we do.
+Okay, that is certainly interesting, but what's the point? We learn that it is a key learning process, but learning to salivate at the ding of a bell sounds nothing like the learning we do.
 
 ### It's not about the spit
 
