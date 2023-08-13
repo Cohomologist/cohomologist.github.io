@@ -3,7 +3,7 @@ title: "Classical conditioning: what's the point?"
 published: true
 ---
 
-Ivan Pavlov never intended to be a psychologist. After all, he lived in a time where philosophers were supposed to be the ones studying the mind, and psychology was little more than a couple fun experiments. Indeed, he was first and foremost a physiologist who was more interested in the body than in the mind. But one day, all of that changed.
+Ivan Pavlov never intended to be a psychologist. After all, he lived in a time where philosophers were supposed to be the only ones studying the mind, and psychology was little more than a couple fun experiments. Indeed, he was first and foremost a physiologist who was more interested in the body than in the mind. But one day, all of that changed.
 
 Pavlov was doing an experiment on dogs' digestive processes, and he kept track of their salivation with an apparatus so elaborate, that you wouldn't know that he found his most famous discovery by accident! Indeed, he noticed that as his dogs were becoming more used to the laboratory, they started to salivate whenever they had *anticipated* food, not just when they had seen or smelled food. It seemed like they could tell when food is coming just from cues like the rolling wheels of a food cart. So in 1897, Pavlov published the first ever paper on what we now know as **classical conditioning**. Ever since, leagues of psychology students have had to sit through a lecture about it, memorize it, and chug it on their final.
 
