@@ -35,7 +35,7 @@ Even if the world is unpredictable, it is still built from predictable patterns.
 
 Whenever we read, we don't care about the individual words. We care about how those words assemble together to create phrases. To create clauses. To create sentences. To create meaning. And meaning is the key to all of this.
 
-Classical conditioning is only the beginning to a certain narrative during our evolutionary history. Of how we no longer just measured our worlds, we started to create meaning from our worlds. Of how our senses turned into our perception.
+Classical conditioning is only the beginning to a certain narrative during our evolutionary history. One of how we no longer just measured our worlds, we started to create meaning from our worlds. One of how our senses turned into our perception.
 
 In classical conditioning, we start with an experience that already has innate meaning to us, and we learn how to recognize that experience better. But eventually, we evolved the ability to learn about the value of our experiences through **operant conditioning**. No longer were our behaviors fixed by our genes. Instead, we could learn what is good and what is bad. But still, most of our experiences are not just a single stimulus, but rather a constellation of stimuli that combine into a meaningful whole. Even in operant conditioning, we can associate stimuli together and represent them as a single experience. For example, rats can learn to navigate a maze for food, even if only the final turn in the maze gets them the holy grail. They're able to learn that the journey matters as much as the destination.
 
