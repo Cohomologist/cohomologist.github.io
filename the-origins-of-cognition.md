@@ -4,7 +4,6 @@ title: The origins of cognition
 permalink: /the-origins-of-cognition/
 published: true
 ---
-
 ### Prologue
 
 The first goal of any living thing is to live. The second goal of any living thing is to keep on living. Of course, you might be thinking: why do some bees sacrifice their own lives just to get a sting in? And you have a point here: I should be saying those are the goals of their [**genes**](https://en.wikipedia.org/wiki/The_Selfish_Gene) instead. But for the most part, those goals are fundamental to all of life.
@@ -59,7 +58,7 @@ When it detects that too much iron has breached its outer membrane, the system h
 
 It's important to realize that *E. coli* isn't simply reacting to a stimulus here. It simply cannot predict how long it will take for things to return to normal, because it doesn't have total control over its environment. All it can do is leave the system on until that happens. 
 
-It's just like a thermostat: you set it to a given temperature, and the thermostat will control that temperature by using the house's HVAC system. When it's too cold, the thermostat commands it to heat the home, and when it's too hot, the thermostat commands it to cool the house. Once the temperature is the point you set it at, it doesn't have to do anything until the temperature fluctuates again.
+It's just like a thermostat: you set it to a given temperature, and the thermostat will control that temperature by using the house's HVAC system. When it's too cold, the thermostat commands it to heat the house, and when it's too hot, the thermostat commands it to cool the house. Once the temperature is the point you set it at, it doesn't have to do anything until the temperature fluctuates again.
 
 A thermostat doesn't have to care about the temperature outside, nor whether you'll forget to close the windows. That's because it doesn't have to, and that's the best part! As long as the HVAC system heats the house when it's too cold, and cools the house when it's too hot, the temperature will eventually be where you want it to be. The thermostat is just there to ensure that's the case. It doesn't have to be an oracle that predicts every future temperature fluctuation – it just has to fight against those fluctuations. In an unpredictable world, genius is not an infinite capacity to predict the future, but an infinite capacity to take setbacks. 
 
