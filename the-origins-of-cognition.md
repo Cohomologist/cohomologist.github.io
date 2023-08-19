@@ -4,7 +4,6 @@ title: The origins of cognition
 permalink: /the-origins-of-cognition/
 published: true
 ---
-## The origins of cognition
 
 ### Prologue
 
