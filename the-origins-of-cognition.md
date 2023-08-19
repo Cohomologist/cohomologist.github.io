@@ -95,7 +95,7 @@ We often compare life to a big game of chess, so I want to put the spotlight on 
 
 Perhaps his most important precept was to **overprotect** the most important pieces on his board. It wasn't enough to merely stop the enemy from capturing an important piece next turn. He made sure that the enemy would have the most agonizing time should they try to attack it. To him, not only would the important piece become even more important because it's safe from attack, but it also gives the other pieces protecting it a bigger purpose – a center of gravity to pour their best effort into. 
 
-When I read Nimzowitsch's book [*My System*](https://en.wikipedia.org/wiki/My_System), I couldn't help but notice something profound. Whereas players who came before him thought in terms of *activity*, he thought in terms of *control*. To his ancestors, chess was all about lighting as fierce of a fire as you could on the board. But to Nimzowitsch, chess was about identifying what makes your position good, then doing everything you can to ensure it stays that way. Today, while many, many years have passed since his generation, chess players still approach the game very much in his image. It's all about recognizing those desirable board states, then using a variety of strategies to get there. It's all about control.
+When I read Nimzowitsch's book [*My System*](https://en.wikipedia.org/wiki/My_System), I couldn't help but notice something profound. Whereas players who came before him thought in terms of *activity*, he thought in terms of *control*. To his ancestors, chess was all about lighting as fierce of a fire as you could on the board. But to Nimzowitsch, chess was about identifying what makes a position good, then doing everything you can to maintain a good position. Today, while many, many years have passed since his generation, chess players still approach the game very much in his image. It's all about recognizing those desirable board states, then using a variety of strategies to get there. It's all about control.
 
 ---
 
@@ -103,4 +103,4 @@ So why is the second system a seismic leap from the first? Well, the first syste
 
 Furthermore, the second system foreshadows the next chapter in our evolutionary history. Bacteria are mostly passive creatures that were content with a short life, so long as it can live long enough to divide. But as the first **animals**, and especially **chordates**, had emerged, those species had to evolve new systems, similar to those Nimzowitsch wanted chess players to adopt. Systems that not only kept the organism stable for now, but systems that would keep the organism as far away from death as possible.
 
-To that end, an organism would have to correctly perceive the world, recognize opportunities to improve its position in life, and act on those opportunities safely. To that end, an organism would have to be capable of **cognition**.
+
