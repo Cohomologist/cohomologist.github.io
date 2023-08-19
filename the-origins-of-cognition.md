@@ -45,7 +45,9 @@ Instead, we want to think of it this way: when an organism is hungry, they will 
 
 Furthermore, the world is an unpredictable place. If we viewed behavior as a matter of responding to stimuli, then what if the response didn't accomplish what the organism wanted? Often, they simply make the wrong decision, or they fail to reach their goal because of events beyond their control. If a mouse sees food, but suddenly a cat swoops in to take it, are they still going to chase the food? Or are they going to get the heck out of dodge as they should? Behavior is *interactive*: an organism always adapts its behavior based on feedback from their environment. Every action has a reaction that the organism has to consider.
 
+
 > Yes, organisms do have stimulus-response behaviors. But they're the exception, not the rule, as a stimulus-response behavior is one that can lead to disaster as they ignore environmental feedback.
+
 
 Let's consider how bacteria use control systems to feed themselves. Bacteria automatically feed on nutrients that are nearby, but how do they control how much they eat, and how do they move towards nutrient sources when there aren't any right next to them? I'll give two examples involving one of the most iconic bacteria of all: *E. coli*.
 
@@ -55,7 +57,9 @@ Like most bacterial species, *E. coli* requires a steady intake of iron, but lik
 
 When it detects that too much iron has breached its outer membrane, the system hardens the outer membrane to prevent any more iron from joining the party. From there, iron levels will taper off until things return to normal and the system shuts off, allowing iron to flow in freely again. Yeah, that's basically it.
 
+
 > **Technical details:** *E. coli* keeps this system (called PmrA/PmrB) active when it detects too many Fe<sup>3+</sup> (iron (III)) ions in its periplasm. While the system is active, *E. coli* positively charges its outer membrane to repel any extracellular Fe<sup>3+</sup>. Eventually, once levels return to normal, *E. coli* deactivates the system, so the outer membrane loses its positive charge. In the end, Fe<sup>3+</sup> can flow again, and everyone lives happily ever after.
+
 
 It's important to realize that *E. coli* isn't simply reacting to a stimulus here. It simply cannot predict how long it will take for things to return to normal, because it doesn't have total control over its environment. All it can do is leave the system on until that happens. 
 
@@ -71,7 +75,9 @@ Bacteria seem to wander around randomly, but they can actually wander as a means
 
 Unlike the food we eat, the nutrients that bacteria need are tiny particles scattered across their environment. *E. coli* can only measure the nutrient concentration right next to them. Furthermore, *E. coli* cannot directly control the direction it moves in. They can only either **run** in a straight line, or **tumble** to randomly change direction. Despite those limitations, *E. coli* has a briliant scheme that varies its *tumbling rate* (the average rate that it tumbles at) to move towards regions with better nutrient concentration.
 
+
 > "It follows a simple strategy: If life is getting better, keep going, and if life is getting worse, change direction." – Uri Alon, *An Introduction to Systems Biology*
+
 
 What *E. coli* ultimately wants to control is not the nutrient concentration itself, but instead the *improvement* in nutrient concentration. Unlike the first example, now we see *E. coli* becoming a bit more ambitious! As its other control systems already prevent it from overeating, *E. coli* is always looking for more nutrient-rich regions, even there are already enough nutrients to subsist on in its current position.
 
