@@ -4,6 +4,7 @@ title: The origins of cognition
 permalink: /the-origins-of-cognition/
 published: true
 ---
+
 ### Prologue
 
 The first goal of any living thing is to live. The second goal of any living thing is to keep on living. Of course, you might be thinking: why do some bees sacrifice their own lives just to get a sting in? And you have a point here: I should be saying those are the goals of their [**genes**](https://en.wikipedia.org/wiki/The_Selfish_Gene) instead. But for the most part, those goals are fundamental to all of life.
@@ -48,7 +49,7 @@ Furthermore, the world is an unpredictable place. If we viewed behavior as a mat
 
 Let's consider how bacteria use control systems to feed themselves. Bacteria automatically feed on nutrients that are nearby, but how do they control how much they eat, and how do they move towards nutrient sources when there aren't any right next to them? I'll give two examples involving one of the most iconic bacteria of all: *E. coli*.
 
----
+#### Example 1: Iron metabolism
 
 Like most bacterial species, *E. coli* requires a steady intake of iron, but like anything in life, there can be too much of a good thing. So *E. coli* has [a simple, yet brilliant system](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8381567/#:~:text=The%20PmrA%20response%20regulator%20and,chemical%20cues%20in%20the%20environment.) to control that intake.
 
@@ -64,7 +65,7 @@ A thermostat doesn't have to care about the temperature outside, nor whether you
 
 Both the *E. coli* system and the thermostat are **feedback control** systems. They don't try to predict what will happen in the future, because the environment is unpredictable. Instead, they monitor feedback from the environment to see how distant the main system is from a desirable state, and they perform actions that would likely close that gap. Any time a feedback control system produces behavior, it isn't just a reflex, but instead a deliberate attempt to bring the reality closer to the goal. They engage in a constant dialogue with the environment to adapt to its changing conditions.
 
----
+#### Example 2: Voluntary movement through chemotaxis
 
 Bacteria seem to wander around randomly, but they can actually wander as a means to an end. At least to an extent. Bacteria can move towards nutrient-rich regions through [chemotaxis](https://en.wikipedia.org/wiki/Chemotaxis), which works through a simple feedback control system. *E. coli* has a interesting flavor of chemotaxis which actually uses a simple form of short-term memory to guide its behavior!
 
@@ -80,7 +81,7 @@ It's similar to how a treasure hunter would use a metal detector. If they walk f
 
 Like the first example, this system is also a feedback control system. It constantly compares the current nutrient concentration to the recent history of concentrations, and sees whether it has improved its situation. If not, it adds a bit of chaos to the mix, changing the cell's direction until it finally achieves that improvement. 
 
----
+#### Simple is stable
 
 We often think that primitive species like bacteria are more unstable, but the opposite is true. Primitive species have clear, simple goals specified by their genes. To achieve those goals, they mainly use feedback control systems which are incredibly reliable. That's because those systems take as little risk as possible – if there's even a potential danger looming on the horizon, they immediately shield the organism from that danger. This is similar to how an autopilot merely tries to keep the plane stable, while leaving the actual navigation to the pilot. So for the better part of our evolutionary history, organisms relied on feedback control systems, because they were unwilling (but not entirely uncapable) of taking risks that threatened their immediate survival.
 
