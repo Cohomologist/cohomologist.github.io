@@ -65,7 +65,7 @@ A thermostat doesn't have to care about the temperature outside, nor whether you
 
 #### From the stimulus to the impetus
 
-<div style="display: flex; justify-content: space-between; padding: 5%;">   <img src=".//images/feedbackcontrol.png" alt="Image 1" style="width: 47.5%; height: auto;"> <img src="/images/thermostat.png" alt="Image 2" style="width: 47.5%; height: auto;"> </div>
+<div style="display: flex; justify-content: space-between; padding: 5%;">   <img src="/images/feedbackcontrol.png" alt="Image 1" style="width: 47.5%; height: auto;"> <img src="/images/thermostat.png" alt="Image 2" style="width: 47.5%; height: auto;"> </div>
 
 What does the *E. coli* iron metabolism system and the thermostat have in common? They are both **feedback control** systems. They don't try to predict what will happen in the future, because the environment is beyond predicting. Instead, they constantly monitor feedback from the environment to see how distant the main system is from a desirable state. The control system performs actions towards the main system only to restore that desirable state when needed.
 
