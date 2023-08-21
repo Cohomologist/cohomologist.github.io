@@ -1,9 +1,4 @@
----
-layout: page
-title: The origins of cognition
-permalink: /the-origins-of-cognition/
-published: true
----
+## The origins of cognition
 
 ### Prologue
 
@@ -21,23 +16,21 @@ Second, with such short lifespans, bacteria only need to play the game of life f
 
 And finally, bacteria are just *simple* beings. They don't need a lot of food, they don't really do much as individuals, and they usually just hover around with all their protective gear on until it's their turn to divide. There's just not much that could go wrong for them.
 
-And that is the story of bacteria, but that could have also be the story of every species that lived. Why risk unnecessary interactions with the environment when a quiet approach to life simply worked?
+And that is the story of bacteria, but that could also have been the story of every species that lived. Why risk unnecessary interactions with the environment when a quiet approach to life simply worked?
 
 Yet, at some point during our evolutionary history, the entire tune suddenly changed. 600 million years ago, the world had just escaped the brutal ice age before the Ice Age – the Cryogenian period. From then, the first animals emerged from the ashes... or should I say, from the frost. 
 
-These new species had enough of their ancestors' fear of nature. They were determined to prove that it is not so bad to live an active life exploring the world. Of course, exploration is dangerous – at any moment, they might wander into a gruesome death.
-
-But that risk was worth it. If they could successfully find and use the resources they have on this Earth, they could live for longer than any of their ancestors could ever dream of. If they could form successful social groups that tackled the challenges of life together, they could conquer the natural world to a point where it's no longer a big deal. And if they could form their own cultures and convey it to generations to come, they could be etched into immortality.
+These new species had enough of their ancestors' fear of nature. They wanted to prove that it is not so bad to live an active life exploring the world. Of course, exploration is dangerous – at any moment, they might wander into a gruesome death. But that risk was worth it. If they could successfully find and use the resources they have on this Earth, they could live for longer than any of their ancestors could ever dream of. If they could form successful social groups that tackled the challenges of life together, they could conquer the natural world to a point where it's no longer a big deal. And if they could form their own cultures and convey it to generations to come, they could be etched into immortality.
 
 All of those challenges require **cognition**: the ability to perceive the world correctly and to use that perception to guide action. Today, I will go over the origins of cognition: how did we come to know the world as we do today?
 
-### Bacteria: wiser than you think
+### Behavior as control
 
 When engineers talk about *control*, they are talking about the problem of maintaining a system at a desirable state. To solve that problem, an engineer would design a separate **control system** that monitors the main system, performing actions whenever necessary to bring it towards a desirable state. For example, an autopilot is a control system that stabilizes an airplane by tracking its rotation on all three axes. Since we know how the airplane's elevators, rudders, and ailerons change its rotation, the autopilot can easily deal with any danger to the airplane's stability, by using those three controls according to simple rules.
 
-But control is not only a problem in engineering. *Life* is a problem of control because living is all about controlling all the essential variables so that the organism can keep on living. Every organism strives to maintain **homeostasis** – the whole range of desirable states that ensures future survival. For humans, that includes controlling variables like body temperature, glucose, and heart rate. When an organism strays away from homeostasis for long enough, they simply kick the bucket because in many ways, homeostasis is life.
+But control is not only a problem in engineering. *Life* is a problem of control because living is all about controlling all the essential variables so that the organism can keep on living. Every organism strives to maintain **homeostasis** – the whole range of desirable states that ensures future survival. For humans, that includes controlling variables like body temperature, glucose, and heart rate. When an organism strays away from homeostasis for long enough, they simply kick the bucket.
 
-<img src="/images/behaviorcontrol.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />It is so important to understand control, because most behavior has an ultimate goal: to bring the organism towards homeostasis, towards that range of desirable states. It seems obvious, but yet it isn't obvious enough! Back in the old, old days of behaviorism, psychologists assumed that an organism's behavior was all about making predictable responses to stimuli. But just think about this statement for a bit: *when an organism sees food, they eat it.* 
+<img src="/images/behaviorcontrol.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />It is so important to understand control, because most behavior has one ultimate goal: **to bring the organism towards a desirable state.** It seems obvious, yet it isn't obvious enough! Back in the old, old days of behaviorism, psychologists assumed that an organism's behavior was all about making responses to stimuli. But just think about this statement for a bit: *when an organism sees food, they eat it.* 
 
 It might seem innocuous at first, but there is a huge problem: what if the organism is *full*? It isn't as easy as predicting that an organism will eat every time they see food. It's almost like we sometimes forget we're studying a living thing!
 
@@ -47,13 +40,17 @@ Furthermore, the world is an unpredictable place. If we view behavior as a matte
 
 > Yes, organisms do have some stimulus-response behaviors. But they're the exception, not the rule, as a stimulus-response behavior is one that can lead to disaster since they ignore environmental feedback.
 
+So that's why we want to think of behavior as control: 
+
+### Bacteria: wiser than you think
+
 Let's consider how bacteria use control systems to feed themselves. Bacteria automatically feed on nutrients that are nearby, but how do they control how much they eat, and how do they move towards nutrient sources when there aren't any right next to them? I'll give two examples involving one of the most iconic bacteria of all: *E. coli*.
 
 #### Example 1: Iron metabolism
 
 Like most bacterial species, *E. coli* requires a steady intake of iron, but like anything in life, there can be too much of a good thing. So *E. coli* has [a simple, yet brilliant system](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8381567/#:~:text=The%20PmrA%20response%20regulator%20and,chemical%20cues%20in%20the%20environment.) to control that intake.
 
-<img src="/images/pmrsystem.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />When it detects that too much iron has breached its outer membrane, the system hardens the outer membrane to prevent any more iron from joining the party. From there, iron levels will taper off until things return to normal, usually through moving to a region with a lower iron concentration. Then, the system shuts off, allowing iron to flow in freely again. Yeah, that's basically it.
+<img src="/images/pmrsystem.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />When it detects that too much iron has breached its outer membrane, the system hardens the outer membrane to prevent any more iron from joining the party. From there, iron levels will taper off until things return to normal – which usually happens after  moving to a region with a lower iron concentration. Then, the system shuts off, allowing iron to flow in freely again. Yeah, that's basically it!
 
 > **Technical details:** *E. coli* keeps this system (called PmrA/PmrB) active when it detects too many Fe<sup>3+</sup> (iron (III)) ions in its periplasm. While the system is active, *E. coli* positively charges its outer membrane by modifying its lipopolysaccharides to repel any extracellular Fe<sup>3+</sup>. Eventually, once levels return to normal, *E. coli* deactivates the system, so the outer membrane loses its positive charge. In the end, Fe<sup>3+</sup> can flow again, and everyone lives happily ever after.
 
@@ -93,7 +90,7 @@ It's easy to think that primitive species – like those in the bacterial kingdo
 
 #### Foreshadowing intelligence
 
-Both of the systems we covered above seem fairly straightforward. They maintain a desirable state by performing simple actions against anything that disturbs that state. But the second system is actually a seismic leap from the first!
+Both of the systems we covered above seem fairly straightforward. They maintain a desirable state by performing simple actions against anything that disturbs that state. But there's a big difference in philosophy between the two.
 
 The first system is just there to ensure the cell metabolizes iron properly, keeping iron concentration below a certain point. But the second system has a more ambitious goal. It drives the cell towards more nutrient-rich regions, even if there's already enough food where they are. It isn't enough for the cell to ensure it survive right now. It's only enough when the cell is doing everything it can to make sure it is far away from starvation as possible. Hopefully, even if the nutrient concetration plummets suddenly, there would be enough of a buffer to ensure it doesn't starve.
 
@@ -157,10 +154,10 @@ So around 750 million years ago, the **neuron** was born. Neurons were meant for
 - they can control how sensitive they are to messages from a specific cell by modifying their **synapses**.
 - they communicate with other cells by firing all-or-nothing **impulses** (either they fire at full strength or not at all), which can be reliably passed onto their targets.
 
+
+
 ### References
 
 - Cisek, P. (2019). Resynthesizing behavior through phylogenetic refinement. *Attention, Perception, and Psychophysics*, 81, 2265–2287. Retrieved from https://cisek.org/pavel/Pubs/Cisek2019.pdf.
-- Kelava, I., Rentzsch, F., & Technau, U. (2015). Evolution of eumetazoan nervous systems: insights from cnidarians. *Philosophical Transactions of the Royal Society of London, Series B, Biological Sciences*, 370(1864). Retrieved from https://royalsocietypublishing.org/doi/10.1098/rstb.2015.0065.
-- Miller, M. B., & Bassler, B. L. (2001). Quorum sensing in bacteria. *Annual Review of Microbiology*, *55*, 165–199.
 - Visick, K. L., Stabb, E. V. & Ruby, E. G. (2021). A lasting symbiosis: how *Vibrio fischeri* finds a squid partner and persists within its natural host. *Nature Reviews Microbiology*, 19, 654–665.
 
