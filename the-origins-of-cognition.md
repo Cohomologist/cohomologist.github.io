@@ -6,7 +6,7 @@ The first goal of any living thing is to live. The second goal of any living thi
 
 Ultimately, life is a problem of *control*. How can an organism control what happens to them in an unpredictable world that throws challenge after challenge? We know all about the many tools *we* have to solve that problem, but let's consider the other side of the coin.
 
-We still have countless numbers of bacteria that survive to this day. [Cyanobacteria](https://en.wikipedia.org/wiki/Cyanobacteria) are among the oldest species still alive and well on this Earth, dating back to 3.5 billion years ago. And despite their old age, it's almost as if bacteria are doing better than ever. You know the nukes we've deployed against them in the last century? If antibiotic resistance is already threatening to bring us back to the age of the plague doctor, then damn do bacteria adapt fast!
+We still have countless numbers of bacteria that survive to this day, even though they have a lineage dating back to 3.5 billion years ago. And despite their old age, it's almost as if bacteria are doing better than ever. You know the nukes we've deployed against them in the last century? If antibiotic resistance is already threatening to bring us back to the age of the plague doctor, then damn do bacteria adapt fast!
 
 So what's the secret to immortality that bacteria have up their sleeve? They have three tremendous advantages that brought them from near the very origin of species, all the way to our current world.
 
@@ -18,11 +18,11 @@ And finally, bacteria are just *simple* beings. They don't need a lot of food, t
 
 And that is the story of bacteria, but that could also have been the story of every species that lived. Why risk unnecessary interactions with the environment when a quiet approach to life simply worked?
 
-Yet, at some point during our evolutionary history, the entire tune suddenly changed. 600 million years ago, the world had just escaped the brutal ice age before the Ice Age – the Cryogenian period. From then, the first animals emerged from the ashes... or should I say, from the frost. 
+Yet, at some point during our evolutionary history, the entire tune suddenly changed. 
 
-These new species had enough of their ancestors' fear of nature. They wanted to prove that it is not so bad to live an active life exploring the world. Of course, exploration is dangerous – at any moment, they might wander into a gruesome death. But that risk was worth it. If they could successfully find and use the resources they have on this Earth, they could live for longer than any of their ancestors could ever dream of. If they could form successful social groups that tackled the challenges of life together, they could conquer the natural world to a point where it's no longer a big deal. And if they could form their own cultures and convey it to generations to come, they could be etched into immortality.
+Many, many years ago, the first animals had emerged. They enough of their ancestors' fear of nature. They wanted to prove that it was not so bad to live an active life exploring the world. Of course, exploration is dangerous – at any moment, they might wander into a gruesome death. But that risk was worth it. If they could successfully find and use the resources they have on this Earth, they could live for longer than any of their ancestors could ever dream of. If they could form successful social groups that tackled the challenges of life together, they could conquer the natural world to a point where it's no longer a big deal. And if they could form their own cultures and convey it to generations to come, they could be etched into immortality.
 
-All of those challenges require **cognition**: the ability to perceive the world correctly and to use that perception to guide action. Today, I will go over the origins of cognition: how did we come to know the world as we do today?
+All of those challenges require **cognition**. Today, I will go over the origins of cognition: how did we come to know the world as we do today?
 
 ### Behavior as control
 
@@ -40,11 +40,11 @@ Furthermore, the world is an unpredictable place. If we view behavior as a matte
 
 > Yes, organisms do have some stimulus-response behaviors. But they're the exception, not the rule, as a stimulus-response behavior is one that can lead to disaster since they ignore environmental feedback.
 
-So that's why we want to think of behavior as control: 
+So that's why we want to think of behavior as control. It's because life is a problem of control. An organism lives by accomplishing their goals according to the opportunities and dangers of the world. It's all about goals, and the means to that end.
 
 ### Bacteria: wiser than you think
 
-Let's consider how bacteria use control systems to feed themselves. Bacteria automatically feed on nutrients that are nearby, but how do they control how much they eat, and how do they move towards nutrient sources when there aren't any right next to them? I'll give two examples involving one of the most iconic bacteria of all: *E. coli*.
+Let's consider how bacteria use control systems to solve one of life's basic challenges: feeding. Bacteria automatically feed on nutrients that are nearby, but how do they control how much they eat, and how do they move towards nutrient sources when there aren't any right next to them? I'll give two examples involving one of the most iconic bacteria of all: *E. coli*.
 
 #### Example 1: Iron metabolism
 
@@ -96,9 +96,7 @@ The first system is just there to ensure the cell metabolizes iron properly, kee
 
 Furthermore, the second system foreshadows the next chapter in our evolutionary history. Bacteria are mostly passive creatures that were content with a short life, so long as it can live long enough to divide. But as the first **animals** had emerged, those species had to evolve new systems to fit their more ambitious goals. Systems that not only kept the organism stable for now, but systems that would keep the organism as far away from death as possible.
 
-To that end, an organism would have to correctly perceive the world, recognize opportunities to improve its position in life, and act on those opportunities safely. To that end, an organism would have to be capable of cognition.
-
-### Approaching the Cambrian explosion
+### Approaching the Cambrian explosion (750-540 mya)
 
 All walls fall eventually.
 
@@ -110,15 +108,15 @@ Unlike those that came before them, these new animals were not afraid to drop th
 
 This is surprisingly hard to answer!
 
-Different people will have different answers to this question, because there are a lot of processes across many species that we could consider to be "cognitive". Are simple control systems like metabolism or chemotaxis cognitive? Or does cognition require something more? Furthermore, if we define cognition, we should be able to point out when in our evolutionary history did cognition start to emerge. But rarely does a completely new function like cognition appear out of thin air – instead, like a good watchmaker, evolution slowly assembles its pieces together.
+Different people will have different answers to this question, because there are a lot of processes across many species that we could consider to be "cognitive". Are simple control systems like metabolism or chemotaxis cognitive? Or does cognition require something more? Furthermore, if we define cognition, we should be able to point out when in our evolutionary history did cognition start to emerge. But rarely does a completely new thing like cognition appear out of thin air – instead, like a good watchmaker, evolution slowly assembles its pieces together.
 
-Yet, answer this question I must. So to motivate things a bit, I will look at how the **nervous system** had evolved, starting from 750 million years ago leading up all the way to the Cambrian explosion.
+I'll get back to this question later, as I want to motivate things a bit first. I will look at how the **nervous system** had evolved, starting from 750 million years ago leading up all the way to the Cambrian explosion.
 
 #### Why do neurons exist?
 
 <img src="/images/cellsignalling.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />Neurons are just another solution to a problem every organism has to solve: how do they convey information from one part of their body to another?
 
-As unicellular organisms, bacteria use chains of chemical reactions to transmit signals within the cell. But to an extent, bacteria can also send signals to *other* bacteria, with some being even capable of talking to other species – even animals! 
+As unicellular organisms, bacteria use chains of chemical reactions to transmit signals within the cell. But to an extent, bacteria can also send signals to *other* bacteria as well!
 
 ---
 
@@ -126,7 +124,7 @@ For example, *V. fischeri* is a bioluminscent (light-producing) bacteria that li
 
 The squid has a translucent light organ that houses *V. fischeri* bacteria. During the day, the bacteria gradually populate their light organ, but they doesn't want the bacteria to light up until nighttime – their idea is to hide their shadow from nocturnal predators using the light. Since *V. fischeri* also wants the squid to survive as they're a useful host, they have a clever system that ensures the entire *population* of bacteria in the light organ lights up at the right time.
 
-*<img src="/images/vfischeri.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />V. fischeri* constantly releases an ensemble of signaling molecules called AHLs that circulate within the squid's light organ. However, *V. fischeri* also has receptors for those same molecules, mainly looking for those released by other *V. fischeri* cells. Once a *V. fischeri* cell detects a sufficient concentration of those molecules – or put another way, the population of *V. fischeri* cells exceeds a **quorum** (threshold) – they finally light up.
+*<img src="/images/vfischeri.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />V. fischeri* constantly releases an ensemble of signaling molecules called AHLs that circulate within the squid's light organ. However, *V. fischeri* also has receptors for those same molecules, mainly looking for those released by other *V. fischeri* cells. Once a *V. fischeri* cell detects a sufficient concentration of those molecules – or put another way, the population of *V. fischeri* cells exceeds a threshold (also called a **quorum**) – they finally light up.
 
 Note that the squid purges their light box of *V. fischeri* cells near the crack of dawn. So throughout this process, they maintain a nice little cycle:
 
@@ -134,25 +132,53 @@ Note that the squid purges their light box of *V. fischeri* cells near the crack
 - have the population reach their quorum at night so that they light up, and then 
 - they reset the population before the next day begins.
 
-In **quorum signalling**, bacteria release molecules to signal their presence, as well as measure the concentration of those molecules to estimate their population. It is just the simplest out of many ways that bacteria can communicate with each other. Bacteria can engage in collective behaviors – there was indeed a social world before the social animal.
+In **quorum signalling**, bacteria release molecules to signal their presence, as well as measure the concentration of those molecules to estimate the population around them. It is just the simplest out of many ways that bacteria can communicate with each other. Bacteria can engage in collective behaviors – there was indeed a social world before the social animal.
 
 ---
 
 We saw just one example of how cells can communicate with each other to accomplish something bigger. Whether we're talking about cells or humans, organisms are stronger when they work together.
 
-So I want us to look at communication between cells as a basic form of **social behavior**. When we study bacteria, we study the entire *population* of bacteria in an environment as much as we do the individual cells themselves. Due to their collective behaviors, we could kind of treat the population as a multicellular organism in its own right!
+I want us to look at communication between cells as a basic form of **social behavior**. Even with multicellular organisms, many cells are coordinating with each other to achieve the goals of a single mind. We can apply many of the things we know about the social world to study populations of cells.
 
->  After all, we often treat a group as an individual, for better or for worse of course.
+When we study bacteria, we study the entire *population* of bacteria in an environment as much as we do the individual cells themselves. Due to their collective behaviors, we could kind of treat the population as a multicellular organism in its own right! 
 
-Yet, meaning often gets lost in translation. As incredible as they are, the signalling mechanisms in bacteria are imprecise. Bacteria cannot choose which specific individual they want to talk to, since the messages they convey could easily get lost in their unstable environments. Imagine if every time you made a phone call, you couldn't use the recipient's name and everyone in your neighborhood would get to hear it!
+Yet, meaning often gets lost in translation. As incredible as they are, the signalling mechanisms in bacteria are imprecise. Bacteria cannot choose which specific individual they want to talk to, since the messages they convey could easily get lost in their unstable environments. It's like if every time you made a phone call, you couldn't use the recipient's name, nobody would know who called, and everyone in your neighborhood would get to hear it!
 
-<img src="/images/neuronpurpose.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />If a multicellular organism wants to coordinate their senses and movements properly, that sort of signalling just won't cut it. Imagine if the organism had to move their entire body every time they wanted to move, because the signal to move just propagates to every part of their body. 
+<img src="/images/neuronpurpose.png" alt="negfb" style="width: 60%; float: right; padding: 10px" />If a multicellular organism wants to coordinate their senses and movements properly, that sort of signalling just wouldn't cut it. Imagine if the organism had to move their entire body every time they wanted to move, because the signal to move just propagates to every part of their body!
 
-So around 750 million years ago, the **neuron** was born. Neurons were meant for signaling – they are different from other cells in a number of ways:
+So around 750 million years ago, the **neuron** was born. Neurons were meant for signaling, and we can see that they are different from other cells in a number of ways.
 
-- they can choose which cells they send messages to, since they pass their signals through directed connections called **axons**. 
-- they can control how sensitive they are to messages from a specific cell by modifying their **synapses**.
-- they communicate with other cells by firing all-or-nothing **impulses** (either they fire at full strength or not at all), which can be reliably passed onto their targets.
+First, they can choose which cells they send messages to, since they pass their signals through directed connections called **axons**. Second, they can control how sensitive they are to messages from a specific cell by modifying their **synapses**. 
+
+#### From neurons to intelligence
+
+Neurons come in a couple shapes and sizes, but I'll give an overview of how they work. Since this is a bit technical, I'll start with a bit of a scenario.
+
+Suppose that you are debating whether or not to buy a brand new Ford Fiesta ST as your next car. You take a look at 10 car review sites, and they're all pretty negative about that car.
+
+> Okay, the Fiesta actually has good reviews, but just let me have this one for the sake of example!
+
+But you ask your uncle Bob who is a proud Fiesta owner, and he is ecstatic about it. He begs you to forget the reviews, and even knows a friend of a friend at Ford that will give you a discount. Furthermore, you ask your car enthusiast friend and she gives a thumbs up as well, although she's usually used to driving McLarens and Ferraris. What will your decision be? As the two people you've asked are a lot more important in your life than the 10 critics working for those car review sites, I think they would sway your decision a lot more. We value more the thoughts of people whom we deem important to us.
+
+Of course, if you do decide to buy a Fiesta, you'll form your own opinion on it. Over time, you'll learn whether the 10 critics were right, or your uncle and friend were right. If the Fiesta was as bad as the critics had claimed, then you might trust them a tad more when you buy your next car. But if the Fiesta was actually as great as you heard it was, then the next time you buy a car, you might not even bother with those car review sites anymore.
+
+Neurons are the same story, except on a cellular level. 
+
+A neuron fires momentary signals at full strength called **action potentials** to communicate to its target cells. If they're not firing an action potential, then they're not firing any signal at all – a neuron is like a switch that can only be on or off. But how does a neuron determine when to fire? It depends on its inputs. A neuron has a synapse for each cell that it takes inputs from. When a synapse receives a signal, usually an action potential from another neuron, it can either increase or decrease the chance of the neuron firing. How much it affects the chance depends on the **strength** of that synapse, but this strength can change over time. Indeed, much of what we call learning Those that increase the chance are called **excitatory** synapses, and those that decrease the chance are called **inhibitory** synapses.
+
+And let's consider the scenario again. While you were deciding about the Fiesta, you were not only listening to thoughts about the car. You were listening to *other people's* thoughts about the car. That's so important, because every time you're listening to someone, your mind forms a representation of who they are. And when you see people you know and like, your brain will activate neurons that allow them to influence your decision-making much more than other people could. As much as social hierarchies exist in the animal kingdom, there is a social hierarchy in your brain, and some populations of neurons are more influential than others. 
+
+> At the top of that hierarchy is the **prefrontal cortex**, which has a huge influence on every function of our brain. As social animals, it is no coincidence that we represent the social world in the prefrontal cortex. In a lot of ways, our brain is a model of our world. That's why I wanted us to view communication between cells as social behavior.
+
+#### Cognition: as social as it is natural
+
+Knowing all this, I think we're ready to define what cognition is.
+
+Consider what an organism needs to do to successfuly interact with others. They need to perceive the world correctly so they can understand what others are thinking. They need to be able to recognize different individuals as different and use what they know about an individual to interact with them successfully. They need to be able to predict the outcomes of their actions, especially when those actions affect others more than them.
+
+It turns out, those are exactly the same abilities that an organism needs to successfully explore their environment. 
+
+#### The two fundamental forms of learning
 
 
 
