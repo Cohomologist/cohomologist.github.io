@@ -1,4 +1,8 @@
-## The origins of cognition
+---
+layout: post
+title: "The origins of cognition"
+toc: true
+---
 
 ### Prologue
 
