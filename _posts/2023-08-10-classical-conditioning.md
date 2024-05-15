@@ -1,6 +1,6 @@
 ---
 title: "Classical conditioning: what's the point?"
-published: true
+published: false
 ---
 
 Ivan Pavlov never intended to be a psychologist. After all, he lived in a time where philosophers were supposed to be the only ones studying the mind, and psychology was little more than a couple fun experiments. Indeed, he was first and foremost a physiologist who was more interested in the body than in the mind. But one day, all of that changed.
