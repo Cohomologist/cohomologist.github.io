@@ -1,6 +1,6 @@
 ---
 title: How do neural networks work? (Part 2, Encoding)
-published: true
+published: false
 ---
 
 *If you haven't already, see [my previous post](https://dualcoding.net/neural-networks-part-1/) for the basic idea behind neural networks.*
